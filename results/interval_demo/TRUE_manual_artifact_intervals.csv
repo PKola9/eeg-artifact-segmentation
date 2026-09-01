@@ -1,0 +1,15 @@
+source,channel,channel_index,start_sample_in_window,stop_sample_in_window_exclusive,start_seconds_in_window,end_seconds_in_window,start_seconds_in_recording,end_seconds_in_recording,duration_seconds,threshold,mean_probability,max_probability,samples
+manual_annotation_ground_truth,Fp1,1,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,Fp2,2,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,Fz,7,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,F3,10,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,F4,11,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,F7,14,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,F8,15,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,Cz,25,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,C3,28,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,C4,29,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,T7,32,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,T8,33,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,P7,47,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110
+manual_annotation_ground_truth,P8,48,126,2236,0.504,8.944,306.504,314.944,8.44,0.5,1.0,1.0,2110

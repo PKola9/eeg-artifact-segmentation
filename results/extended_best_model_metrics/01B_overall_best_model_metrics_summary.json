@@ -1,0 +1,11 @@
+{
+  "model": "Improved M3 multi-dataset flow-initialized Split U-Net",
+  "threshold": 0.35,
+  "main_presentation_dice": 0.5812946292356017,
+  "main_presentation_precision": 0.4335932065421683,
+  "main_presentation_recall": 0.8816112126165977,
+  "strict_original_dice_retained_for_traceability": 0.4327728017163018,
+  "interval_tolerance_seconds": 2.0,
+  "source_raw_metrics_file": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE\\SHOW_FINAL\\12_IMPROVED_M3_EXTENDED_METRICS\\01_overall_saved_test_window_metrics.csv",
+  "source_interval_comparison_file": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE\\SHOW_FINAL\\02_MODEL_COMPARE\\01_comparison_with_M3_2sec_tolerance.csv"
+}

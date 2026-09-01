@@ -1,0 +1,58 @@
+{
+  "purpose": "Select artifact probability threshold using validation Dice, then evaluate on held-out test run.",
+  "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+  "model": "outputs_v6_flowmatching_study/training_runs/V6_CLEAN_M3_multidataset_flowinit_splitunet/splitunet_channel_time_best_val_dice.pt",
+  "model_arch": "split_unet",
+  "device": "cuda",
+  "holdout_test": {
+    "subject": "sub-30",
+    "run": 6,
+    "test_windows": 226
+  },
+  "validation_windows": 5563,
+  "threshold_selection_rule": "choose threshold with highest validation Dice",
+  "best_validation_threshold": 0.3,
+  "best_validation_metrics": {
+    "threshold": 0.3,
+    "dice": 0.3663542157267914,
+    "iou": 0.22425560011454895,
+    "f1": 0.36635421572679133,
+    "precision": 0.3404796005091386,
+    "recall_sensitivity": 0.3964849345916339,
+    "specificity": 0.9646316069388812,
+    "accuracy": 0.9396190227806603,
+    "tp": 14322732,
+    "fp": 27743612,
+    "tn": 756674610,
+    "fn": 21801546
+  },
+  "test_metrics_at_best_validation_threshold": {
+    "threshold": 0.3,
+    "dice": 0.37916333808158004,
+    "iou": 0.23393062792200345,
+    "f1": 0.37916333808158,
+    "precision": 0.3449438509697474,
+    "recall_sensitivity": 0.42091988011667786,
+    "specificity": 0.9624037896893052,
+    "accuracy": 0.9380795560221988,
+    "tp": 630309,
+    "fp": 1196971,
+    "tn": 30640573,
+    "fn": 867147
+  },
+  "test_metrics_at_threshold_0p5": {
+    "threshold": 0.5,
+    "dice": 0.37604612572964846,
+    "iou": 0.23156207309065804,
+    "f1": 0.3760461257296484,
+    "precision": 0.4092184290018344,
+    "recall_sensitivity": 0.34784861792266353,
+    "specificity": 0.9763801818381468,
+    "accuracy": 0.9481456427178641,
+    "tp": 520888,
+    "fp": 751997,
+    "tn": 31085547,
+    "fn": 976568
+  },
+  "important_note": "The test set was not used to choose the threshold."
+}

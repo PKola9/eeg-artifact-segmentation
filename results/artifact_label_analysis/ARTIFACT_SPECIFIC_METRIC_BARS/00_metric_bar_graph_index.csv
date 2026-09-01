@@ -1,0 +1,13 @@
+metric,column,direction,graph_file
+Dice,dice,Higher is better,01_artifact_specific_dice.png
+IoU / Jaccard,iou_jaccard_artifact,Higher is better,02_artifact_specific_iou_jaccard.png
+mIoU,miou_binary_clean_artifact,Higher is better,03_artifact_specific_miou.png
+Precision,precision,Higher is better,04_artifact_specific_precision.png
+Recall / Sensitivity,recall_sensitivity,Higher is better,05_artifact_specific_recall.png
+F1-score,f1_score,Higher is better,06_artifact_specific_f1_score.png
+Accuracy,accuracy,Higher is better,07_artifact_specific_accuracy.png
+Specificity,specificity,Higher is better,08_artifact_specific_specificity.png
+Balanced accuracy,balanced_accuracy,Higher is better,09_artifact_specific_balanced_accuracy.png
+PR-AUC / Average precision,average_precision_pr_auc,Higher is better,10_artifact_specific_pr_auc.png
+AUROC,auroc,Higher is better,11_artifact_specific_auroc.png
+Hausdorff boundary distance (seconds),hausdorff_boundary_seconds,Lower is better,12_artifact_specific_hausdorff_seconds.png

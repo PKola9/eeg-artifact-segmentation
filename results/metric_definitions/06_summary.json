@@ -1,0 +1,29 @@
+{
+  "overall": {
+    "level": "saved_test_windows_overall",
+    "dataset_dir": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\BFM2_ChannelTimeSegmentation_V2_WORKING\\outputs_v2_channel_time\\window_datasets\\sub30_run06_channel_time_v2_test",
+    "model": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE\\outputs_v6_flowmatching_study\\training_runs\\V6_CLEAN_M3_multidataset_flowinit_splitunet\\splitunet_channel_time_best_val_dice.pt",
+    "threshold": 0.35,
+    "windows": 226,
+    "sampling_frequency_hz": 250.0,
+    "dice": 0.37983643622503177,
+    "iou_jaccard_artifact": 0.23444326530835932,
+    "iou_clean": 0.9402588415336456,
+    "miou_binary_clean_artifact": 0.5873510534210025,
+    "precision": 0.3616482312774825,
+    "recall_sensitivity": 0.39995098353474157,
+    "f1_score": 0.3798364362250317,
+    "accuracy": 0.9413321733913305,
+    "specificity": 0.9667956485588209,
+    "tp": 598909,
+    "fp": 1057145,
+    "tn": 30780399,
+    "fn": 898547,
+    "true_positive_samples": 1497456,
+    "predicted_positive_samples": 1656054,
+    "evaluated_channel_time_points": 33335000,
+    "hausdorff_boundary_samples": 151626.0,
+    "hausdorff_boundary_seconds": 606.504,
+    "hausdorff_boundary_milliseconds": 606504.0
+  }
+}

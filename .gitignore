@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+*.env
+
+# Large/raw datasets and generated arrays
+packages/
+downloads/
+window_datasets/
+outputs_v6_flowmatching_study/window_datasets/
+*.dat
+*.edf
+*.EDF
+*.mat
+*.set
+*.fdt
+
+# Archives and temporary transfer files
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Keep curated result files in results/.
+!results/

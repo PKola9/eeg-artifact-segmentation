@@ -1,0 +1,255 @@
+{
+  "purpose": "Predict human-readable artifact start/end intervals from an original EDF window.",
+  "input_edf": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\packages\\Physiomotion Dataset\\Original Dataset\\sub-30\\eeg\\sub-30_task-artifact_run-06_eeg.edf",
+  "manual_annotation_csv": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\packages\\Physiomotion Dataset\\Original Dataset\\derivatives\\Manual_Annotations\\sub30_run06.csv",
+  "model_checkpoint": "\\\\?\\C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE\\outputs_v6_flowmatching_study\\training_runs\\V6_IMPROVED_M3_multidataset_flowinit_lr5e4_patience8\\splitunet_channel_time_best_val_dice.pt",
+  "model_arch": "split_unet",
+  "subject": "sub-30",
+  "run": 6,
+  "start_seconds": 306.0,
+  "end_seconds": 316.0,
+  "window_seconds": 10.0,
+  "sampling_frequency_hz": 250.0,
+  "input_shape": [
+    59,
+    2500
+  ],
+  "output_probability_shape": [
+    59,
+    2500
+  ],
+  "threshold": 0.35,
+  "min_duration_seconds": 0.04,
+  "merge_gap_seconds": 0.02,
+  "metrics_for_this_window": {
+    "tp": 22499,
+    "fp": 3769,
+    "tn": 114191,
+    "fn": 7041,
+    "accuracy": 0.9267118644067797,
+    "precision": 0.8565174356631643,
+    "recall_sensitivity": 0.7616452268111036,
+    "specificity": 0.968048491013903,
+    "f1": 0.8063001720183487,
+    "dice": 0.8063001720183486,
+    "iou": 0.6754630880542796
+  },
+  "predicted_interval_summary": {
+    "interval_count": 94,
+    "channels_with_intervals": 17,
+    "total_interval_seconds_channel_summed": 105.116,
+    "top_channels": [
+      {
+        "channel": "Fp2",
+        "interval_count": 1,
+        "total_seconds": 9.996
+      },
+      {
+        "channel": "Fp1",
+        "interval_count": 1,
+        "total_seconds": 9.916
+      },
+      {
+        "channel": "F7",
+        "interval_count": 2,
+        "total_seconds": 9.72
+      },
+      {
+        "channel": "F8",
+        "interval_count": 1,
+        "total_seconds": 9.652
+      },
+      {
+        "channel": "T7",
+        "interval_count": 2,
+        "total_seconds": 9.604000000000001
+      },
+      {
+        "channel": "Fz",
+        "interval_count": 4,
+        "total_seconds": 9.544
+      },
+      {
+        "channel": "F4",
+        "interval_count": 3,
+        "total_seconds": 9.508
+      },
+      {
+        "channel": "F3",
+        "interval_count": 3,
+        "total_seconds": 9.496
+      },
+      {
+        "channel": "T8",
+        "interval_count": 8,
+        "total_seconds": 9.028
+      },
+      {
+        "channel": "C3",
+        "interval_count": 15,
+        "total_seconds": 7.384
+      },
+      {
+        "channel": "C4",
+        "interval_count": 15,
+        "total_seconds": 5.908
+      },
+      {
+        "channel": "Cz",
+        "interval_count": 13,
+        "total_seconds": 2.476
+      },
+      {
+        "channel": "FT8",
+        "interval_count": 9,
+        "total_seconds": 1.024
+      },
+      {
+        "channel": "P7",
+        "interval_count": 5,
+        "total_seconds": 0.848
+      },
+      {
+        "channel": "FT7",
+        "interval_count": 5,
+        "total_seconds": 0.428
+      }
+    ]
+  },
+  "true_interval_summary": {
+    "interval_count": 14,
+    "channels_with_intervals": 14,
+    "total_interval_seconds_channel_summed": 118.15999999999998,
+    "top_channels": [
+      {
+        "channel": "C3",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "C4",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "Cz",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "F3",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "F4",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "F7",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "F8",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "Fp1",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "Fp2",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "Fz",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "P7",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "P8",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "T7",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      },
+      {
+        "channel": "T8",
+        "interval_count": 1,
+        "total_seconds": 8.44
+      }
+    ]
+  },
+  "mask_report_for_full_run": {
+    "artifact_annotation_rows_used": 368,
+    "all_channel_rows": 3,
+    "channel_specific_rows": 365,
+    "mapped_channel_marks": 907,
+    "label_counts": {
+      "hor_headm": 176,
+      "blink_hor_headm": 50,
+      "eyebrow": 30,
+      "ver_headm": 24,
+      "swallow_eyebrow": 24,
+      "tongue": 21,
+      "hor_eyem": 16,
+      "blink_eyebrow": 14,
+      "blink": 10,
+      "chew": 2,
+      "blink_ver_headm": 1
+    },
+    "top_annotation_channels": {
+      "Fp2-F8": 31,
+      "F8-T8": 29,
+      "Fp1-F7": 28,
+      "Fp2-F4": 20,
+      "F7-Fp1": 19,
+      "F7-T7": 18,
+      "Fz-F4": 15,
+      "F4-C4": 15,
+      "P7-O1": 14,
+      "P3-O1": 14,
+      "P4-O2": 14,
+      "T7-P7": 13,
+      "P8-O2": 13,
+      "O2-P8": 13,
+      "C3-Cz": 10,
+      "Cz-C4": 10,
+      "C3-P3": 10,
+      "P7-P3": 10,
+      "P3-Pz": 10,
+      "F4-F8": 9,
+      "C4-P4": 9,
+      "Fp1-F3": 7,
+      "Fp1-Fp2": 6,
+      "C4-T8": 6,
+      "F7-F3": 5,
+      "O1-O2": 4,
+      "T8-P8": 3,
+      "F3-Fz": 3,
+      "T7-C3": 3,
+      "F3-C3": 3
+    }
+  },
+  "created_files": {
+    "input_eeg_window_csv": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_INPUT_eeg_window.csv",
+    "output_probability_map_csv": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_OUTPUT_probability_map.csv",
+    "predicted_artifact_intervals_csv": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_PREDICTED_artifact_intervals.csv",
+    "true_manual_artifact_intervals_csv": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_TRUE_manual_artifact_intervals.csv",
+    "interval_timeline_png": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_INTERVAL_timeline.png",
+    "summary_json": "C:\\Users\\prana\\OneDrive\\Documents\\DEEPLEARNING MODELS FOR REMOVING ARTIFACTS FROM EEG DATA\\V6_SHOWABLE_DEMO_OUTPUTS_IMPROVED_M3\\sub-30_run-06_306s_to_316s_thr_0.35\\sub-30_run-06_306s_to_316s_SUMMARY.json"
+  }
+}

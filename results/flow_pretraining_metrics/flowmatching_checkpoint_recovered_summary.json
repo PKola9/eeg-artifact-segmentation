@@ -1,0 +1,58 @@
+{
+  "task": "Recovered flow-matching checkpoint evaluation",
+  "note": "This is not retraining. It re-evaluates a saved flow-matching checkpoint using fixed random seeds.",
+  "run_name": "FM2_physio_bci_eegmmidb_recovered_checkpoint_metrics",
+  "checkpoint": "outputs_v6_flowmatching_study/flowmatching_runs/V6_CLEAN_02_physio_bci_eegmmidb_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt",
+  "datasets": [
+    "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap"
+  ],
+  "x_shape": [
+    75620,
+    59,
+    2500
+  ],
+  "split": {
+    "train_windows": 60496,
+    "validation_windows": 11343,
+    "test_windows": 3781,
+    "train_source_counts": {
+      "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 29666,
+      "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 26073,
+      "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 4757
+    },
+    "validation_source_counts": {
+      "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 5567,
+      "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 4925,
+      "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 851
+    },
+    "test_source_counts": {
+      "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 1851,
+      "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 1646,
+      "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 284
+    }
+  },
+  "model": "FlowMatchingChannelTimeUNet",
+  "parameters": 26658,
+  "objective": "MSE between predicted velocity and x1 - x0",
+  "formula": "x0 = Gaussian noise; x1 = real EEG; xt = (1 - t) * x0 + t * x1; target velocity = x1 - x0",
+  "metrics": {
+    "run_name": "FM2_physio_bci_eegmmidb_recovered_checkpoint_metrics",
+    "checkpoint": "outputs_v6_flowmatching_study/flowmatching_runs/V6_CLEAN_02_physio_bci_eegmmidb_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt",
+    "train_flow_mse": 0.5200610951444391,
+    "train_flow_rmse": 0.7211526157093512,
+    "validation_flow_mse": 0.5203968488979852,
+    "validation_flow_rmse": 0.7213853678152788,
+    "test_flow_mse": 0.518942318133531,
+    "test_flow_rmse": 0.720376511369944,
+    "train_windows": 60496,
+    "validation_windows": 11343,
+    "test_windows": 3781,
+    "seed": 42
+  },
+  "files": {
+    "metrics_csv": "outputs_v6_flowmatching_study/flowmatching_runs/V6_CLEAN_02_physio_bci_eegmmidb_flowmatching_20ep/flowmatching_checkpoint_recovered_metrics.csv",
+    "summary_json": "outputs_v6_flowmatching_study/flowmatching_runs/V6_CLEAN_02_physio_bci_eegmmidb_flowmatching_20ep/flowmatching_checkpoint_recovered_summary.json"
+  }
+}

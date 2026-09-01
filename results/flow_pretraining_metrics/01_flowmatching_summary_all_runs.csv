@@ -1,0 +1,4 @@
+flow_run,short_name,datasets_used_for_flow_pretraining,best_epoch,train_flow_mse,train_flow_rmse,validation_flow_mse,validation_flow_rmse,test_flow_mse,test_flow_rmse,metrics_type
+FM1,PhysioMotion only,PhysioMotion,19,0.468846129211629,0.6847233961327953,0.4588915062919272,0.6774153130037195,0.472880706432182,0.6876632216660871,saved_epoch_curve_best_validation_mse
+FM2,Physio + BCI + EEGMMIDB,PhysioMotion + BCI IV + EEGMMIDB,checkpoint_recovered,0.5200610951444391,0.7211526157093512,0.5203968488979852,0.7213853678152788,0.518942318133531,0.720376511369944,re_evaluated_saved_checkpoint_fixed_seed
+FM3/M4,Physio + BCI + EEGMMIDB + DEAP + CHB-MIT,PhysioMotion + BCI IV + EEGMMIDB + DEAP + CHB-MIT,20,0.4503695938931747,0.6710958157321313,0.4491259153237255,0.6701685723187305,0.4544670651438424,0.6741417248204137,saved_epoch_curve_best_validation_mse

@@ -1,0 +1,2341 @@
+{
+  "task": "Combined PhysioMotion + BCI 59-channel EEG flow-matching pretraining",
+  "purpose": "learn better EEG structure from more unlabeled EEG before supervised artifact segmentation",
+  "datasets": [
+    "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap",
+    "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap"
+  ],
+  "dataset_metadata": {
+    "dataset_type": "multi-dataset EEG-only flow-matching dataset",
+    "x_shape": [
+      154444,
+      59,
+      2500
+    ],
+    "x_shape_per_window": [
+      59,
+      2500
+    ],
+    "sources": [
+      {
+        "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+        "original_x_shape": [
+          37310,
+          59,
+          2500
+        ],
+        "metadata": {
+          "task": "Version 2 channel-time binary EEG artifact segmentation",
+          "source": "original PhysioMotion EDF files",
+          "sharded": true,
+          "shard_dir": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/shards",
+          "total_windows": 37310,
+          "artifact_windows": 13565,
+          "clean_windows": 23745,
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "y_shape_per_window": [
+            59,
+            2500
+          ],
+          "channel_names": [
+            "Fpz",
+            "Fp1",
+            "Fp2",
+            "AF3",
+            "AF4",
+            "AF7",
+            "AF8",
+            "Fz",
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "FCz",
+            "FC1",
+            "FC2",
+            "FC3",
+            "FC4",
+            "FC5",
+            "FC6",
+            "FT7",
+            "FT8",
+            "Cz",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "T7",
+            "T8",
+            "CP1",
+            "CP2",
+            "CP3",
+            "CP4",
+            "CP5",
+            "CP6",
+            "TP7",
+            "TP8",
+            "Pz",
+            "P3",
+            "P4",
+            "P5",
+            "P6",
+            "P7",
+            "P8",
+            "POz",
+            "PO3",
+            "PO4",
+            "PO5",
+            "PO6",
+            "PO7",
+            "PO8",
+            "Oz",
+            "O1",
+            "O2"
+          ],
+          "mean_artifact_fraction_channel_time": 0.0420147626164658,
+          "processed_runs": [
+            {
+              "subject": "sub-1",
+              "run": 1,
+              "windows": 249,
+              "artifact_windows": 88,
+              "clean_windows": 161,
+              "shard_name": "sub-1_run-01.npz"
+            },
+            {
+              "subject": "sub-1",
+              "run": 2,
+              "windows": 264,
+              "artifact_windows": 86,
+              "clean_windows": 178,
+              "shard_name": "sub-1_run-02.npz"
+            },
+            {
+              "subject": "sub-1",
+              "run": 3,
+              "windows": 228,
+              "artifact_windows": 86,
+              "clean_windows": 142,
+              "shard_name": "sub-1_run-03.npz"
+            },
+            {
+              "subject": "sub-1",
+              "run": 4,
+              "windows": 223,
+              "artifact_windows": 94,
+              "clean_windows": 129,
+              "shard_name": "sub-1_run-04.npz"
+            },
+            {
+              "subject": "sub-1",
+              "run": 5,
+              "windows": 221,
+              "artifact_windows": 94,
+              "clean_windows": 127,
+              "shard_name": "sub-1_run-05.npz"
+            },
+            {
+              "subject": "sub-1",
+              "run": 6,
+              "windows": 224,
+              "artifact_windows": 101,
+              "clean_windows": 123,
+              "shard_name": "sub-1_run-06.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 1,
+              "windows": 279,
+              "artifact_windows": 112,
+              "clean_windows": 167,
+              "shard_name": "sub-2_run-01.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 2,
+              "windows": 260,
+              "artifact_windows": 118,
+              "clean_windows": 142,
+              "shard_name": "sub-2_run-02.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 3,
+              "windows": 230,
+              "artifact_windows": 127,
+              "clean_windows": 103,
+              "shard_name": "sub-2_run-03.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 4,
+              "windows": 231,
+              "artifact_windows": 109,
+              "clean_windows": 122,
+              "shard_name": "sub-2_run-04.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 5,
+              "windows": 231,
+              "artifact_windows": 96,
+              "clean_windows": 135,
+              "shard_name": "sub-2_run-05.npz"
+            },
+            {
+              "subject": "sub-2",
+              "run": 6,
+              "windows": 232,
+              "artifact_windows": 109,
+              "clean_windows": 123,
+              "shard_name": "sub-2_run-06.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 1,
+              "windows": 227,
+              "artifact_windows": 90,
+              "clean_windows": 137,
+              "shard_name": "sub-3_run-01.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 2,
+              "windows": 227,
+              "artifact_windows": 80,
+              "clean_windows": 147,
+              "shard_name": "sub-3_run-02.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 71,
+              "clean_windows": 155,
+              "shard_name": "sub-3_run-03.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 4,
+              "windows": 227,
+              "artifact_windows": 80,
+              "clean_windows": 147,
+              "shard_name": "sub-3_run-04.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 5,
+              "windows": 225,
+              "artifact_windows": 73,
+              "clean_windows": 152,
+              "shard_name": "sub-3_run-05.npz"
+            },
+            {
+              "subject": "sub-3",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 63,
+              "clean_windows": 163,
+              "shard_name": "sub-3_run-06.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 1,
+              "windows": 245,
+              "artifact_windows": 80,
+              "clean_windows": 165,
+              "shard_name": "sub-5_run-01.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 2,
+              "windows": 229,
+              "artifact_windows": 82,
+              "clean_windows": 147,
+              "shard_name": "sub-5_run-02.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 75,
+              "clean_windows": 151,
+              "shard_name": "sub-5_run-03.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 4,
+              "windows": 225,
+              "artifact_windows": 89,
+              "clean_windows": 136,
+              "shard_name": "sub-5_run-04.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 5,
+              "windows": 225,
+              "artifact_windows": 78,
+              "clean_windows": 147,
+              "shard_name": "sub-5_run-05.npz"
+            },
+            {
+              "subject": "sub-5",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 82,
+              "clean_windows": 144,
+              "shard_name": "sub-5_run-06.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 1,
+              "windows": 242,
+              "artifact_windows": 93,
+              "clean_windows": 149,
+              "shard_name": "sub-7_run-01.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 2,
+              "windows": 226,
+              "artifact_windows": 99,
+              "clean_windows": 127,
+              "shard_name": "sub-7_run-02.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 88,
+              "clean_windows": 138,
+              "shard_name": "sub-7_run-03.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 4,
+              "windows": 238,
+              "artifact_windows": 68,
+              "clean_windows": 170,
+              "shard_name": "sub-7_run-04.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 5,
+              "windows": 229,
+              "artifact_windows": 72,
+              "clean_windows": 157,
+              "shard_name": "sub-7_run-05.npz"
+            },
+            {
+              "subject": "sub-7",
+              "run": 6,
+              "windows": 231,
+              "artifact_windows": 101,
+              "clean_windows": 130,
+              "shard_name": "sub-7_run-06.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 1,
+              "windows": 232,
+              "artifact_windows": 76,
+              "clean_windows": 156,
+              "shard_name": "sub-9_run-01.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 2,
+              "windows": 228,
+              "artifact_windows": 91,
+              "clean_windows": 137,
+              "shard_name": "sub-9_run-02.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 3,
+              "windows": 227,
+              "artifact_windows": 87,
+              "clean_windows": 140,
+              "shard_name": "sub-9_run-03.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 4,
+              "windows": 247,
+              "artifact_windows": 69,
+              "clean_windows": 178,
+              "shard_name": "sub-9_run-04.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 5,
+              "windows": 227,
+              "artifact_windows": 70,
+              "clean_windows": 157,
+              "shard_name": "sub-9_run-05.npz"
+            },
+            {
+              "subject": "sub-9",
+              "run": 6,
+              "windows": 231,
+              "artifact_windows": 56,
+              "clean_windows": 175,
+              "shard_name": "sub-9_run-06.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 1,
+              "windows": 225,
+              "artifact_windows": 65,
+              "clean_windows": 160,
+              "shard_name": "sub-10_run-01.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 2,
+              "windows": 224,
+              "artifact_windows": 71,
+              "clean_windows": 153,
+              "shard_name": "sub-10_run-02.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 82,
+              "clean_windows": 144,
+              "shard_name": "sub-10_run-03.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 4,
+              "windows": 224,
+              "artifact_windows": 75,
+              "clean_windows": 149,
+              "shard_name": "sub-10_run-04.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 5,
+              "windows": 223,
+              "artifact_windows": 68,
+              "clean_windows": 155,
+              "shard_name": "sub-10_run-05.npz"
+            },
+            {
+              "subject": "sub-10",
+              "run": 6,
+              "windows": 225,
+              "artifact_windows": 72,
+              "clean_windows": 153,
+              "shard_name": "sub-10_run-06.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 1,
+              "windows": 231,
+              "artifact_windows": 49,
+              "clean_windows": 182,
+              "shard_name": "sub-11_run-01.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 2,
+              "windows": 227,
+              "artifact_windows": 50,
+              "clean_windows": 177,
+              "shard_name": "sub-11_run-02.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 57,
+              "clean_windows": 169,
+              "shard_name": "sub-11_run-03.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 4,
+              "windows": 235,
+              "artifact_windows": 50,
+              "clean_windows": 185,
+              "shard_name": "sub-11_run-04.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 5,
+              "windows": 226,
+              "artifact_windows": 84,
+              "clean_windows": 142,
+              "shard_name": "sub-11_run-05.npz"
+            },
+            {
+              "subject": "sub-11",
+              "run": 6,
+              "windows": 225,
+              "artifact_windows": 100,
+              "clean_windows": 125,
+              "shard_name": "sub-11_run-06.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 1,
+              "windows": 248,
+              "artifact_windows": 95,
+              "clean_windows": 153,
+              "shard_name": "sub-12_run-01.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 2,
+              "windows": 229,
+              "artifact_windows": 88,
+              "clean_windows": 141,
+              "shard_name": "sub-12_run-02.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 3,
+              "windows": 227,
+              "artifact_windows": 84,
+              "clean_windows": 143,
+              "shard_name": "sub-12_run-03.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 4,
+              "windows": 229,
+              "artifact_windows": 89,
+              "clean_windows": 140,
+              "shard_name": "sub-12_run-04.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 5,
+              "windows": 231,
+              "artifact_windows": 109,
+              "clean_windows": 122,
+              "shard_name": "sub-12_run-05.npz"
+            },
+            {
+              "subject": "sub-12",
+              "run": 6,
+              "windows": 230,
+              "artifact_windows": 92,
+              "clean_windows": 138,
+              "shard_name": "sub-12_run-06.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 1,
+              "windows": 230,
+              "artifact_windows": 68,
+              "clean_windows": 162,
+              "shard_name": "sub-13_run-01.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 2,
+              "windows": 227,
+              "artifact_windows": 56,
+              "clean_windows": 171,
+              "shard_name": "sub-13_run-02.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 50,
+              "clean_windows": 176,
+              "shard_name": "sub-13_run-03.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 4,
+              "windows": 226,
+              "artifact_windows": 60,
+              "clean_windows": 166,
+              "shard_name": "sub-13_run-04.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 5,
+              "windows": 226,
+              "artifact_windows": 84,
+              "clean_windows": 142,
+              "shard_name": "sub-13_run-05.npz"
+            },
+            {
+              "subject": "sub-13",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 87,
+              "clean_windows": 139,
+              "shard_name": "sub-13_run-06.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 1,
+              "windows": 240,
+              "artifact_windows": 74,
+              "clean_windows": 166,
+              "shard_name": "sub-14_run-01.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 2,
+              "windows": 233,
+              "artifact_windows": 32,
+              "clean_windows": 201,
+              "shard_name": "sub-14_run-02.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 3,
+              "windows": 227,
+              "artifact_windows": 43,
+              "clean_windows": 184,
+              "shard_name": "sub-14_run-03.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 4,
+              "windows": 230,
+              "artifact_windows": 67,
+              "clean_windows": 163,
+              "shard_name": "sub-14_run-04.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 5,
+              "windows": 229,
+              "artifact_windows": 70,
+              "clean_windows": 159,
+              "shard_name": "sub-14_run-05.npz"
+            },
+            {
+              "subject": "sub-14",
+              "run": 6,
+              "windows": 230,
+              "artifact_windows": 36,
+              "clean_windows": 194,
+              "shard_name": "sub-14_run-06.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 1,
+              "windows": 243,
+              "artifact_windows": 79,
+              "clean_windows": 164,
+              "shard_name": "sub-15_run-01.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 2,
+              "windows": 238,
+              "artifact_windows": 83,
+              "clean_windows": 155,
+              "shard_name": "sub-15_run-02.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 3,
+              "windows": 235,
+              "artifact_windows": 79,
+              "clean_windows": 156,
+              "shard_name": "sub-15_run-03.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 4,
+              "windows": 241,
+              "artifact_windows": 86,
+              "clean_windows": 155,
+              "shard_name": "sub-15_run-04.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 5,
+              "windows": 229,
+              "artifact_windows": 89,
+              "clean_windows": 140,
+              "shard_name": "sub-15_run-05.npz"
+            },
+            {
+              "subject": "sub-15",
+              "run": 6,
+              "windows": 231,
+              "artifact_windows": 71,
+              "clean_windows": 160,
+              "shard_name": "sub-15_run-06.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 1,
+              "windows": 227,
+              "artifact_windows": 74,
+              "clean_windows": 153,
+              "shard_name": "sub-16_run-01.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 2,
+              "windows": 224,
+              "artifact_windows": 79,
+              "clean_windows": 145,
+              "shard_name": "sub-16_run-02.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 78,
+              "clean_windows": 148,
+              "shard_name": "sub-16_run-03.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 4,
+              "windows": 226,
+              "artifact_windows": 81,
+              "clean_windows": 145,
+              "shard_name": "sub-16_run-04.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 5,
+              "windows": 225,
+              "artifact_windows": 84,
+              "clean_windows": 141,
+              "shard_name": "sub-16_run-05.npz"
+            },
+            {
+              "subject": "sub-16",
+              "run": 6,
+              "windows": 225,
+              "artifact_windows": 89,
+              "clean_windows": 136,
+              "shard_name": "sub-16_run-06.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 1,
+              "windows": 238,
+              "artifact_windows": 59,
+              "clean_windows": 179,
+              "shard_name": "sub-17_run-01.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 2,
+              "windows": 226,
+              "artifact_windows": 42,
+              "clean_windows": 184,
+              "shard_name": "sub-17_run-02.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 3,
+              "windows": 228,
+              "artifact_windows": 63,
+              "clean_windows": 165,
+              "shard_name": "sub-17_run-03.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 4,
+              "windows": 245,
+              "artifact_windows": 54,
+              "clean_windows": 191,
+              "shard_name": "sub-17_run-04.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 5,
+              "windows": 207,
+              "artifact_windows": 69,
+              "clean_windows": 138,
+              "shard_name": "sub-17_run-05.npz"
+            },
+            {
+              "subject": "sub-17",
+              "run": 6,
+              "windows": 229,
+              "artifact_windows": 70,
+              "clean_windows": 159,
+              "shard_name": "sub-17_run-06.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 1,
+              "windows": 231,
+              "artifact_windows": 85,
+              "clean_windows": 146,
+              "shard_name": "sub-18_run-01.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 2,
+              "windows": 228,
+              "artifact_windows": 88,
+              "clean_windows": 140,
+              "shard_name": "sub-18_run-02.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 3,
+              "windows": 229,
+              "artifact_windows": 81,
+              "clean_windows": 148,
+              "shard_name": "sub-18_run-03.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 4,
+              "windows": 230,
+              "artifact_windows": 84,
+              "clean_windows": 146,
+              "shard_name": "sub-18_run-04.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 5,
+              "windows": 234,
+              "artifact_windows": 85,
+              "clean_windows": 149,
+              "shard_name": "sub-18_run-05.npz"
+            },
+            {
+              "subject": "sub-18",
+              "run": 6,
+              "windows": 227,
+              "artifact_windows": 73,
+              "clean_windows": 154,
+              "shard_name": "sub-18_run-06.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 1,
+              "windows": 223,
+              "artifact_windows": 60,
+              "clean_windows": 163,
+              "shard_name": "sub-19_run-01.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 2,
+              "windows": 222,
+              "artifact_windows": 92,
+              "clean_windows": 130,
+              "shard_name": "sub-19_run-02.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 3,
+              "windows": 224,
+              "artifact_windows": 68,
+              "clean_windows": 156,
+              "shard_name": "sub-19_run-03.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 4,
+              "windows": 222,
+              "artifact_windows": 91,
+              "clean_windows": 131,
+              "shard_name": "sub-19_run-04.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 5,
+              "windows": 222,
+              "artifact_windows": 83,
+              "clean_windows": 139,
+              "shard_name": "sub-19_run-05.npz"
+            },
+            {
+              "subject": "sub-19",
+              "run": 6,
+              "windows": 222,
+              "artifact_windows": 86,
+              "clean_windows": 136,
+              "shard_name": "sub-19_run-06.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 1,
+              "windows": 229,
+              "artifact_windows": 100,
+              "clean_windows": 129,
+              "shard_name": "sub-20_run-01.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 2,
+              "windows": 227,
+              "artifact_windows": 93,
+              "clean_windows": 134,
+              "shard_name": "sub-20_run-02.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 3,
+              "windows": 225,
+              "artifact_windows": 88,
+              "clean_windows": 137,
+              "shard_name": "sub-20_run-03.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 4,
+              "windows": 240,
+              "artifact_windows": 65,
+              "clean_windows": 175,
+              "shard_name": "sub-20_run-04.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 5,
+              "windows": 230,
+              "artifact_windows": 62,
+              "clean_windows": 168,
+              "shard_name": "sub-20_run-05.npz"
+            },
+            {
+              "subject": "sub-20",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 69,
+              "clean_windows": 157,
+              "shard_name": "sub-20_run-06.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 1,
+              "windows": 323,
+              "artifact_windows": 90,
+              "clean_windows": 233,
+              "shard_name": "sub-21_run-01.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 2,
+              "windows": 262,
+              "artifact_windows": 90,
+              "clean_windows": 172,
+              "shard_name": "sub-21_run-02.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 3,
+              "windows": 241,
+              "artifact_windows": 102,
+              "clean_windows": 139,
+              "shard_name": "sub-21_run-03.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 4,
+              "windows": 255,
+              "artifact_windows": 81,
+              "clean_windows": 174,
+              "shard_name": "sub-21_run-04.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 5,
+              "windows": 238,
+              "artifact_windows": 86,
+              "clean_windows": 152,
+              "shard_name": "sub-21_run-05.npz"
+            },
+            {
+              "subject": "sub-21",
+              "run": 6,
+              "windows": 232,
+              "artifact_windows": 84,
+              "clean_windows": 148,
+              "shard_name": "sub-21_run-06.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 1,
+              "windows": 240,
+              "artifact_windows": 78,
+              "clean_windows": 162,
+              "shard_name": "sub-22_run-01.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 2,
+              "windows": 226,
+              "artifact_windows": 75,
+              "clean_windows": 151,
+              "shard_name": "sub-22_run-02.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 71,
+              "clean_windows": 155,
+              "shard_name": "sub-22_run-03.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 4,
+              "windows": 225,
+              "artifact_windows": 58,
+              "clean_windows": 167,
+              "shard_name": "sub-22_run-04.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 5,
+              "windows": 224,
+              "artifact_windows": 50,
+              "clean_windows": 174,
+              "shard_name": "sub-22_run-05.npz"
+            },
+            {
+              "subject": "sub-22",
+              "run": 6,
+              "windows": 225,
+              "artifact_windows": 55,
+              "clean_windows": 170,
+              "shard_name": "sub-22_run-06.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 1,
+              "windows": 228,
+              "artifact_windows": 75,
+              "clean_windows": 153,
+              "shard_name": "sub-23_run-01.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 2,
+              "windows": 225,
+              "artifact_windows": 86,
+              "clean_windows": 139,
+              "shard_name": "sub-23_run-02.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 3,
+              "windows": 226,
+              "artifact_windows": 84,
+              "clean_windows": 142,
+              "shard_name": "sub-23_run-03.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 4,
+              "windows": 226,
+              "artifact_windows": 87,
+              "clean_windows": 139,
+              "shard_name": "sub-23_run-04.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 5,
+              "windows": 223,
+              "artifact_windows": 82,
+              "clean_windows": 141,
+              "shard_name": "sub-23_run-05.npz"
+            },
+            {
+              "subject": "sub-23",
+              "run": 6,
+              "windows": 223,
+              "artifact_windows": 87,
+              "clean_windows": 136,
+              "shard_name": "sub-23_run-06.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 1,
+              "windows": 229,
+              "artifact_windows": 122,
+              "clean_windows": 107,
+              "shard_name": "sub-24_run-01.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 2,
+              "windows": 223,
+              "artifact_windows": 120,
+              "clean_windows": 103,
+              "shard_name": "sub-24_run-02.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 3,
+              "windows": 223,
+              "artifact_windows": 120,
+              "clean_windows": 103,
+              "shard_name": "sub-24_run-03.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 4,
+              "windows": 224,
+              "artifact_windows": 119,
+              "clean_windows": 105,
+              "shard_name": "sub-24_run-04.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 5,
+              "windows": 200,
+              "artifact_windows": 117,
+              "clean_windows": 83,
+              "shard_name": "sub-24_run-05.npz"
+            },
+            {
+              "subject": "sub-24",
+              "run": 6,
+              "windows": 223,
+              "artifact_windows": 126,
+              "clean_windows": 97,
+              "shard_name": "sub-24_run-06.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 1,
+              "windows": 224,
+              "artifact_windows": 132,
+              "clean_windows": 92,
+              "shard_name": "sub-25_run-01.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 2,
+              "windows": 225,
+              "artifact_windows": 133,
+              "clean_windows": 92,
+              "shard_name": "sub-25_run-02.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 3,
+              "windows": 225,
+              "artifact_windows": 133,
+              "clean_windows": 92,
+              "shard_name": "sub-25_run-03.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 4,
+              "windows": 225,
+              "artifact_windows": 136,
+              "clean_windows": 89,
+              "shard_name": "sub-25_run-04.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 5,
+              "windows": 225,
+              "artifact_windows": 131,
+              "clean_windows": 94,
+              "shard_name": "sub-25_run-05.npz"
+            },
+            {
+              "subject": "sub-25",
+              "run": 6,
+              "windows": 223,
+              "artifact_windows": 126,
+              "clean_windows": 97,
+              "shard_name": "sub-25_run-06.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 1,
+              "windows": 239,
+              "artifact_windows": 90,
+              "clean_windows": 149,
+              "shard_name": "sub-26_run-01.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 2,
+              "windows": 230,
+              "artifact_windows": 90,
+              "clean_windows": 140,
+              "shard_name": "sub-26_run-02.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 3,
+              "windows": 228,
+              "artifact_windows": 89,
+              "clean_windows": 139,
+              "shard_name": "sub-26_run-03.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 4,
+              "windows": 238,
+              "artifact_windows": 84,
+              "clean_windows": 154,
+              "shard_name": "sub-26_run-04.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 5,
+              "windows": 230,
+              "artifact_windows": 77,
+              "clean_windows": 153,
+              "shard_name": "sub-26_run-05.npz"
+            },
+            {
+              "subject": "sub-26",
+              "run": 6,
+              "windows": 249,
+              "artifact_windows": 22,
+              "clean_windows": 227,
+              "shard_name": "sub-26_run-06.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 1,
+              "windows": 242,
+              "artifact_windows": 86,
+              "clean_windows": 156,
+              "shard_name": "sub-27_run-01.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 2,
+              "windows": 228,
+              "artifact_windows": 80,
+              "clean_windows": 148,
+              "shard_name": "sub-27_run-02.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 3,
+              "windows": 227,
+              "artifact_windows": 76,
+              "clean_windows": 151,
+              "shard_name": "sub-27_run-03.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 4,
+              "windows": 230,
+              "artifact_windows": 84,
+              "clean_windows": 146,
+              "shard_name": "sub-27_run-04.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 5,
+              "windows": 226,
+              "artifact_windows": 92,
+              "clean_windows": 134,
+              "shard_name": "sub-27_run-05.npz"
+            },
+            {
+              "subject": "sub-27",
+              "run": 6,
+              "windows": 224,
+              "artifact_windows": 94,
+              "clean_windows": 130,
+              "shard_name": "sub-27_run-06.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 1,
+              "windows": 230,
+              "artifact_windows": 127,
+              "clean_windows": 103,
+              "shard_name": "sub-28_run-01.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 2,
+              "windows": 227,
+              "artifact_windows": 124,
+              "clean_windows": 103,
+              "shard_name": "sub-28_run-02.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 3,
+              "windows": 225,
+              "artifact_windows": 108,
+              "clean_windows": 117,
+              "shard_name": "sub-28_run-03.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 4,
+              "windows": 231,
+              "artifact_windows": 108,
+              "clean_windows": 123,
+              "shard_name": "sub-28_run-04.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 5,
+              "windows": 225,
+              "artifact_windows": 124,
+              "clean_windows": 101,
+              "shard_name": "sub-28_run-05.npz"
+            },
+            {
+              "subject": "sub-28",
+              "run": 6,
+              "windows": 224,
+              "artifact_windows": 122,
+              "clean_windows": 102,
+              "shard_name": "sub-28_run-06.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 1,
+              "windows": 231,
+              "artifact_windows": 65,
+              "clean_windows": 166,
+              "shard_name": "sub-29_run-01.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 2,
+              "windows": 233,
+              "artifact_windows": 78,
+              "clean_windows": 155,
+              "shard_name": "sub-29_run-02.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 3,
+              "windows": 225,
+              "artifact_windows": 67,
+              "clean_windows": 158,
+              "shard_name": "sub-29_run-03.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 4,
+              "windows": 226,
+              "artifact_windows": 67,
+              "clean_windows": 159,
+              "shard_name": "sub-29_run-04.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 5,
+              "windows": 226,
+              "artifact_windows": 74,
+              "clean_windows": 152,
+              "shard_name": "sub-29_run-05.npz"
+            },
+            {
+              "subject": "sub-29",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 76,
+              "clean_windows": 150,
+              "shard_name": "sub-29_run-06.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 1,
+              "windows": 233,
+              "artifact_windows": 96,
+              "clean_windows": 137,
+              "shard_name": "sub-30_run-01.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 2,
+              "windows": 230,
+              "artifact_windows": 97,
+              "clean_windows": 133,
+              "shard_name": "sub-30_run-02.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 3,
+              "windows": 228,
+              "artifact_windows": 91,
+              "clean_windows": 137,
+              "shard_name": "sub-30_run-03.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 4,
+              "windows": 224,
+              "artifact_windows": 66,
+              "clean_windows": 158,
+              "shard_name": "sub-30_run-04.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 5,
+              "windows": 227,
+              "artifact_windows": 79,
+              "clean_windows": 148,
+              "shard_name": "sub-30_run-05.npz"
+            },
+            {
+              "subject": "sub-30",
+              "run": 6,
+              "windows": 226,
+              "artifact_windows": 74,
+              "clean_windows": 152,
+              "shard_name": "sub-30_run-06.npz"
+            }
+          ],
+          "label_counts": {
+            "hor_headm": 20944,
+            "tongue": 10102,
+            "blink_hor_headm": 6753,
+            "eyebrow": 4246,
+            "ver_headm": 4202,
+            "tongue_eyebrow": 3229,
+            "swallow": 2845,
+            "ver_eyem": 2458,
+            "blink": 2423,
+            "hor_eyem": 2174,
+            "blink_eyebrow": 2084,
+            "swallow_eyebrow": 1458,
+            "chew": 609,
+            "blink_ver_headm": 595
+          },
+          "top_annotation_channels": {
+            "Fp2-F8": 4942,
+            "F7-Fp1": 4843,
+            "F8-T8": 4786,
+            "Fp1-F7": 4725,
+            "F7-T7": 4283,
+            "Fp2-F4": 2764,
+            "F4-F8": 2475,
+            "F7-F3": 2447,
+            "T7-P7": 2353,
+            "T8-P8": 2171,
+            "Fp1-Fp2": 2101,
+            "Fp1-F3": 2036,
+            "C4-T8": 1952,
+            "Fz-F4": 1870,
+            "T7-C3": 1644,
+            "P7-O1": 1532,
+            "O2-P8": 1526,
+            "O1-O2": 1455,
+            "F3-Fz": 1452,
+            "P3-O1": 1246,
+            "F4-C4": 1211,
+            "C3-Cz": 1129,
+            "P4-O2": 1112,
+            "P8-O2": 1055,
+            "Cz-C4": 1036,
+            "C4-P4": 910,
+            "P7-P3": 891,
+            "ALL": 844,
+            "P4-P8": 842,
+            "F3-C3": 712,
+            "C3-P3": 420,
+            "P3-Pz": 335,
+            "Pz-P4": 242,
+            "Fz-Cz": 215,
+            "Cz-Pz": 108
+          },
+          "settings": {
+            "max_subjects": 30,
+            "max_runs_per_subject": 6,
+            "runs": "",
+            "window_sec": 10.0,
+            "stride_sec": 5.0,
+            "downsample_to_hz": 250.0,
+            "output_name": "full_sub30_runs6_channel_time_10s_250hz_sharded"
+          },
+          "files": {
+            "manifest_csv": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/manifest.csv",
+            "metadata_json": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/metadata.json",
+            "shards": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/shards"
+          },
+          "storage": "memmap float32 arrays",
+          "source_sharded_dir": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded",
+          "dataset_dir": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+          "manifest": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/manifest.csv",
+          "x_memmap": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/x_float32.dat",
+          "y_memmap": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/y_float32.dat",
+          "x_shape": [
+            37310,
+            59,
+            2500
+          ],
+          "y_shape": [
+            37310,
+            59,
+            2500
+          ],
+          "note": "Scientific values are identical to the sharded dataset; only storage format changed for faster GPU training."
+        }
+      },
+      {
+        "dataset_dir": "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap",
+        "original_x_shape": [
+          5892,
+          59,
+          2500
+        ],
+        "metadata": {
+          "dataset_name": "BCI Competition IV Data Set 1, 59-channel EEG windows for flow matching",
+          "source_prepared_folder": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 4 - BCI IV 1/bci_comp_iv_ds1_1000hz_csv",
+          "purpose": "external unlabeled EEG pretraining only",
+          "supervised_artifact_labels_available": false,
+          "x_shape": [
+            5892,
+            59,
+            2500
+          ],
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "channel_names": [
+            "AF3",
+            "AF4",
+            "F5",
+            "F3",
+            "F1",
+            "Fz",
+            "F2",
+            "F4",
+            "F6",
+            "FC5",
+            "FC3",
+            "FC1",
+            "FCz",
+            "FC2",
+            "FC4",
+            "FC6",
+            "CFC7",
+            "CFC5",
+            "CFC3",
+            "CFC1",
+            "CFC2",
+            "CFC4",
+            "CFC6",
+            "CFC8",
+            "T7",
+            "C5",
+            "C3",
+            "C1",
+            "Cz",
+            "C2",
+            "C4",
+            "C6",
+            "T8",
+            "CCP7",
+            "CCP5",
+            "CCP3",
+            "CCP1",
+            "CCP2",
+            "CCP4",
+            "CCP6",
+            "CCP8",
+            "CP5",
+            "CP3",
+            "CP1",
+            "CPz",
+            "CP2",
+            "CP4",
+            "CP6",
+            "P5",
+            "P3",
+            "P1",
+            "Pz",
+            "P2",
+            "P4",
+            "P6",
+            "PO1",
+            "PO2",
+            "O1",
+            "O2"
+          ],
+          "source_sampling_frequency_hz": 1000.0,
+          "target_sampling_frequency_hz": 250.0,
+          "downsample_factor": 4,
+          "downsampling_note": "Every 4th sample is used to convert 1000 Hz to 250 Hz.",
+          "window_duration_seconds": 10.0,
+          "stride_seconds": 5.0,
+          "total_windows": 5892,
+          "recordings": 14,
+          "files": {
+            "x_memmap": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap/x_float32.dat",
+            "manifest": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap/manifest.csv"
+          }
+        }
+      },
+      {
+        "dataset_dir": "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap",
+        "original_x_shape": [
+          32644,
+          59,
+          2500
+        ],
+        "metadata": {
+          "dataset_name": "EEGMMIDB 59-channel EEG windows for flow matching",
+          "source_prepared_folder": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 1 EEGMMIDB/eegmmidb_runwise_csv",
+          "purpose": "external unlabeled EEG pretraining only",
+          "supervised_artifact_labels_available": false,
+          "x_shape": [
+            32644,
+            59,
+            2500
+          ],
+          "x_shape_allocated_on_disk": [
+            32737,
+            59,
+            2500
+          ],
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "selected_channel_names_original": [
+            "Fc5.",
+            "Fc3.",
+            "Fc1.",
+            "Fcz.",
+            "Fc2.",
+            "Fc4.",
+            "Fc6.",
+            "C5..",
+            "C3..",
+            "C1..",
+            "Cz..",
+            "C2..",
+            "C4..",
+            "C6..",
+            "Cp5.",
+            "Cp3.",
+            "Cp1.",
+            "Cpz.",
+            "Cp2.",
+            "Cp4.",
+            "Cp6.",
+            "Fp1.",
+            "Fpz.",
+            "Fp2.",
+            "Af7.",
+            "Af3.",
+            "Afz.",
+            "Af4.",
+            "Af8.",
+            "F7..",
+            "F5..",
+            "F3..",
+            "F1..",
+            "Fz..",
+            "F2..",
+            "F4..",
+            "F6..",
+            "F8..",
+            "Ft7.",
+            "Ft8.",
+            "T7..",
+            "T8..",
+            "T9..",
+            "T10.",
+            "Tp7.",
+            "Tp8.",
+            "P7..",
+            "P5..",
+            "P3..",
+            "P1..",
+            "Pz..",
+            "P2..",
+            "P4..",
+            "P6..",
+            "P8..",
+            "Po7.",
+            "Po3.",
+            "Poz.",
+            "Po4."
+          ],
+          "selected_channel_names_normalized": [
+            "FC5",
+            "FC3",
+            "FC1",
+            "FCZ",
+            "FC2",
+            "FC4",
+            "FC6",
+            "C5",
+            "C3",
+            "C1",
+            "CZ",
+            "C2",
+            "C4",
+            "C6",
+            "CP5",
+            "CP3",
+            "CP1",
+            "CPZ",
+            "CP2",
+            "CP4",
+            "CP6",
+            "FP1",
+            "FPZ",
+            "FP2",
+            "AF7",
+            "AF3",
+            "AFZ",
+            "AF4",
+            "AF8",
+            "F7",
+            "F5",
+            "F3",
+            "F1",
+            "FZ",
+            "F2",
+            "F4",
+            "F6",
+            "F8",
+            "FT7",
+            "FT8",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "TP7",
+            "TP8",
+            "P7",
+            "P5",
+            "P3",
+            "P1",
+            "PZ",
+            "P2",
+            "P4",
+            "P6",
+            "P8",
+            "PO7",
+            "PO3",
+            "POZ",
+            "PO4"
+          ],
+          "source_channel_count": 64,
+          "selected_channel_count": 59,
+          "target_sampling_frequency_hz": 250.0,
+          "resampling_note": "EEGMMIDB recordings are linearly interpolated to 250 Hz so each 10-second window has 2500 samples.",
+          "window_duration_seconds": 10.0,
+          "stride_seconds": 5.0,
+          "total_windows": 32644,
+          "total_windows_original_estimate_before_skips": 32737,
+          "recordings": 1526,
+          "recordings_used": 1522,
+          "recordings_skipped": 4,
+          "skipped_recordings": [
+            {
+              "subject": "S001",
+              "run": "R13",
+              "recording_kind": "execute_both_fists_or_both_feet",
+              "csv_file": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 1 EEGMMIDB/eegmmidb_runwise_csv/subjects/S001/S001R13_signals.csv.gz",
+              "reason": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+            },
+            {
+              "subject": "S002",
+              "run": "R06",
+              "recording_kind": "imagine_both_fists_or_both_feet",
+              "csv_file": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 1 EEGMMIDB/eegmmidb_runwise_csv/subjects/S002/S002R06_signals.csv.gz",
+              "reason": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+            },
+            {
+              "subject": "S002",
+              "run": "R07",
+              "recording_kind": "execute_left_or_right_fist",
+              "csv_file": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 1 EEGMMIDB/eegmmidb_runwise_csv/subjects/S002/S002R07_signals.csv.gz",
+              "reason": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+            },
+            {
+              "subject": "S080",
+              "run": "R05",
+              "recording_kind": "execute_both_fists_or_both_feet",
+              "csv_file": "/mnt/aiongpfs/users/pkola/thesis_eeg/packages/Final 1 EEGMMIDB/eegmmidb_runwise_csv/subjects/S080/S080R05_signals.csv.gz",
+              "reason": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+            }
+          ],
+          "channel_selection_limitation": "The first 59 stable EEGMMIDB EEG channels are selected to match the 59-channel model shape. This is used only for self-supervised EEG pretraining, not for supervised artifact-mask training.",
+          "files": {
+            "x_memmap": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap/x_float32.dat",
+            "manifest": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap/manifest.csv"
+          }
+        }
+      },
+      {
+        "dataset_dir": "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap",
+        "original_x_shape": [
+          14080,
+          59,
+          2500
+        ],
+        "metadata": {
+          "dataset_name": "DEAP curated 59-channel EEG windows for flow matching",
+          "source_prepared_folder": "/home/users/pkola/thesis_eeg/packages/Final 3 Deap/deap_preprocessed_csv",
+          "purpose": "external unlabeled EEG pretraining only",
+          "supervised_artifact_labels_available": false,
+          "x_shape": [
+            14080,
+            59,
+            2500
+          ],
+          "x_shape_allocated_on_disk": [
+            14080,
+            59,
+            2500
+          ],
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "reference_channel_names": [
+            "AF3",
+            "AF4",
+            "F5",
+            "F3",
+            "F1",
+            "Fz",
+            "F2",
+            "F4",
+            "F6",
+            "FC5",
+            "FC3",
+            "FC1",
+            "FCz",
+            "FC2",
+            "FC4",
+            "FC6",
+            "CFC7",
+            "CFC5",
+            "CFC3",
+            "CFC1",
+            "CFC2",
+            "CFC4",
+            "CFC6",
+            "CFC8",
+            "T7",
+            "C5",
+            "C3",
+            "C1",
+            "Cz",
+            "C2",
+            "C4",
+            "C6",
+            "T8",
+            "CCP7",
+            "CCP5",
+            "CCP3",
+            "CCP1",
+            "CCP2",
+            "CCP4",
+            "CCP6",
+            "CCP8",
+            "CP5",
+            "CP3",
+            "CP1",
+            "CPz",
+            "CP2",
+            "CP4",
+            "CP6",
+            "P5",
+            "P3",
+            "P1",
+            "Pz",
+            "P2",
+            "P4",
+            "P6",
+            "PO1",
+            "PO2",
+            "O1",
+            "O2"
+          ],
+          "available_deap_channels_mapped_by_name": [
+            "AF3",
+            "F3",
+            "FC5",
+            "FC1",
+            "C3",
+            "T7",
+            "CP5",
+            "CP1",
+            "P3",
+            "O1",
+            "Pz",
+            "AF4",
+            "Fz",
+            "F4",
+            "FC6",
+            "FC2",
+            "Cz",
+            "C4",
+            "T8",
+            "CP6",
+            "CP2",
+            "P4",
+            "O2"
+          ],
+          "missing_reference_channels_filled_with_zero": [
+            "F5",
+            "F1",
+            "F2",
+            "F6",
+            "FC3",
+            "FCz",
+            "FC4",
+            "CFC7",
+            "CFC5",
+            "CFC3",
+            "CFC1",
+            "CFC2",
+            "CFC4",
+            "CFC6",
+            "CFC8",
+            "C5",
+            "C1",
+            "C2",
+            "C6",
+            "CCP7",
+            "CCP5",
+            "CCP3",
+            "CCP1",
+            "CCP2",
+            "CCP4",
+            "CCP6",
+            "CCP8",
+            "CP3",
+            "CPz",
+            "CP4",
+            "P5",
+            "P1",
+            "P2",
+            "P6",
+            "PO1",
+            "PO2"
+          ],
+          "source_sampling_frequency_hz": "from manifest, typically 128 Hz",
+          "target_sampling_frequency_hz": 250.0,
+          "resampling_note": "DEAP is linearly interpolated from 128 Hz to 250 Hz.",
+          "window_duration_seconds": 10.0,
+          "stride_seconds": 5.0,
+          "total_windows": 14080,
+          "recordings_used": 1280,
+          "recordings_skipped": 0,
+          "skipped_recordings": [],
+          "curation_limitation": "Only exact matching EEG channel names are placed into the 59-channel reference layout; other channels remain zero. Used only for flow pretraining.",
+          "files": {
+            "x_memmap": "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap/x_float32.dat",
+            "manifest": "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap/manifest.csv"
+          }
+        }
+      },
+      {
+        "dataset_dir": "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap",
+        "original_x_shape": [
+          28961,
+          59,
+          2500
+        ],
+        "metadata": {
+          "dataset_name": "CHB-MIT chb01 curated 59-channel EEG windows for flow matching",
+          "source_prepared_folder": "/home/users/pkola/thesis_eeg/packages/Final 5 CHBMIT/chbmit_chb01_csv",
+          "purpose": "external unlabeled EEG pretraining only",
+          "supervised_artifact_labels_available": false,
+          "x_shape": [
+            28961,
+            59,
+            2500
+          ],
+          "x_shape_allocated_on_disk": [
+            28961,
+            59,
+            2500
+          ],
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "reference_channel_names": [
+            "AF3",
+            "AF4",
+            "F5",
+            "F3",
+            "F1",
+            "Fz",
+            "F2",
+            "F4",
+            "F6",
+            "FC5",
+            "FC3",
+            "FC1",
+            "FCz",
+            "FC2",
+            "FC4",
+            "FC6",
+            "CFC7",
+            "CFC5",
+            "CFC3",
+            "CFC1",
+            "CFC2",
+            "CFC4",
+            "CFC6",
+            "CFC8",
+            "T7",
+            "C5",
+            "C3",
+            "C1",
+            "Cz",
+            "C2",
+            "C4",
+            "C6",
+            "T8",
+            "CCP7",
+            "CCP5",
+            "CCP3",
+            "CCP1",
+            "CCP2",
+            "CCP4",
+            "CCP6",
+            "CCP8",
+            "CP5",
+            "CP3",
+            "CP1",
+            "CPz",
+            "CP2",
+            "CP4",
+            "CP6",
+            "P5",
+            "P3",
+            "P1",
+            "Pz",
+            "P2",
+            "P4",
+            "P6",
+            "PO1",
+            "PO2",
+            "O1",
+            "O2"
+          ],
+          "source_bipolar_channels": [
+            "FP1-F7",
+            "F7-T7",
+            "T7-P7",
+            "P7-O1",
+            "FP1-F3",
+            "F3-C3",
+            "C3-P3",
+            "P3-O1",
+            "FP2-F4",
+            "F4-C4",
+            "C4-P4",
+            "P4-O2",
+            "FP2-F8",
+            "F8-T8",
+            "T8-P8-0",
+            "P8-O2",
+            "FZ-CZ",
+            "CZ-PZ",
+            "P7-T7",
+            "T7-FT9",
+            "FT9-FT10",
+            "FT10-T8",
+            "T8-P8-1"
+          ],
+          "slot_mapping_source_to_reference_tensor_position": {
+            "FP1-F7": "AF3",
+            "F7-T7": "AF4",
+            "T7-P7": "F5",
+            "P7-O1": "F3",
+            "FP1-F3": "F1",
+            "F3-C3": "Fz",
+            "C3-P3": "F2",
+            "P3-O1": "F4",
+            "FP2-F4": "F6",
+            "F4-C4": "FC5",
+            "C4-P4": "FC3",
+            "P4-O2": "FC1",
+            "FP2-F8": "FCz",
+            "F8-T8": "FC2",
+            "T8-P8-0": "FC4",
+            "P8-O2": "FC6",
+            "FZ-CZ": "CFC7",
+            "CZ-PZ": "CFC5",
+            "P7-T7": "CFC3",
+            "T7-FT9": "CFC1",
+            "FT9-FT10": "CFC2",
+            "FT10-T8": "CFC4",
+            "T8-P8-1": "CFC6"
+          },
+          "source_sampling_frequency_hz": "from manifest, typically 256 Hz",
+          "target_sampling_frequency_hz": 250.0,
+          "resampling_note": "CHB-MIT is linearly interpolated from 256 Hz to 250 Hz.",
+          "window_duration_seconds": 10.0,
+          "stride_seconds": 5.0,
+          "total_windows": 28961,
+          "recordings_used": 42,
+          "recordings_skipped": 0,
+          "skipped_recordings": [],
+          "curation_limitation": "Bipolar CHB-MIT channels are slot-filled into the 59-channel tensor. Used only for flow pretraining.",
+          "files": {
+            "x_memmap": "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap/x_float32.dat",
+            "manifest": "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap/manifest.csv"
+          }
+        }
+      },
+      {
+        "dataset_dir": "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap",
+        "original_x_shape": [
+          35783,
+          59,
+          2500
+        ],
+        "metadata": {
+          "dataset_name": "TUH artifact corpus curated 59-channel EEG windows for flow matching",
+          "source_folder": "/home/users/pkola/thesis_eeg/packages/TUH",
+          "purpose": "external EEG flow pretraining only for M5 comparison",
+          "supervised_artifact_labels_available_in_source": true,
+          "used_for_supervised_artifact_training": false,
+          "reason_not_used_for_supervised_training": "TUH uses a different clinical/bipolar montage and annotation scheme. For fair comparison with previous models, TUH is used only for flow pretraining; the supervised Split U-Net is still trained/evaluated on the same PhysioMotion artifact-mask dataset.",
+          "x_shape": [
+            35783,
+            59,
+            2500
+          ],
+          "x_shape_allocated_on_disk": [
+            35880,
+            59,
+            2500
+          ],
+          "x_shape_per_window": [
+            59,
+            2500
+          ],
+          "reference_channel_names": [
+            "AF3",
+            "AF4",
+            "F5",
+            "F3",
+            "F1",
+            "Fz",
+            "F2",
+            "F4",
+            "F6",
+            "FC5",
+            "FC3",
+            "FC1",
+            "FCz",
+            "FC2",
+            "FC4",
+            "FC6",
+            "CFC7",
+            "CFC5",
+            "CFC3",
+            "CFC1",
+            "CFC2",
+            "CFC4",
+            "CFC6",
+            "CFC8",
+            "T7",
+            "C5",
+            "C3",
+            "C1",
+            "Cz",
+            "C2",
+            "C4",
+            "C6",
+            "T8",
+            "CCP7",
+            "CCP5",
+            "CCP3",
+            "CCP1",
+            "CCP2",
+            "CCP4",
+            "CCP6",
+            "CCP8",
+            "CP5",
+            "CP3",
+            "CP1",
+            "CPz",
+            "CP2",
+            "CP4",
+            "CP6",
+            "P5",
+            "P3",
+            "P1",
+            "Pz",
+            "P2",
+            "P4",
+            "P6",
+            "PO1",
+            "PO2",
+            "O1",
+            "O2"
+          ],
+          "first_recording_source_channel_names": [
+            "EEG FP1-REF",
+            "EEG FP2-REF",
+            "EEG F3-REF",
+            "EEG F4-REF",
+            "EEG C3-REF",
+            "EEG C4-REF",
+            "EEG P3-REF",
+            "EEG P4-REF",
+            "EEG O1-REF",
+            "EEG O2-REF",
+            "EEG F7-REF",
+            "EEG F8-REF",
+            "EEG T3-REF",
+            "EEG T4-REF",
+            "EEG T5-REF",
+            "EEG T6-REF",
+            "EEG A1-REF",
+            "EEG A2-REF",
+            "EEG FZ-REF",
+            "EEG CZ-REF",
+            "EEG PZ-REF",
+            "EEG ROC-REF",
+            "EEG LOC-REF",
+            "EEG EKG1-REF",
+            "EMG-REF",
+            "EEG 26-REF",
+            "EEG 27-REF",
+            "EEG 28-REF",
+            "EEG 29-REF",
+            "EEG 30-REF",
+            "EEG T1-REF",
+            "EEG T2-REF",
+            "PHOTIC-REF",
+            "IBI",
+            "BURSTS",
+            "SUPPR"
+          ],
+          "target_sampling_frequency_hz": 250.0,
+          "window_duration_seconds": 10.0,
+          "stride_seconds": 10.0,
+          "total_windows": 35783,
+          "recordings_seen": 310,
+          "recordings_skipped": 1,
+          "skipped_recordings": [
+            {
+              "edf_file": "/home/users/pkola/thesis_eeg/packages/TUH/v3.0.1/edf/01_tcp_ar/aaaaabbn_s009_t000.edf",
+              "reason": "skipped 18 non-finite/extreme numeric windows"
+            }
+          ],
+          "source_annotation_label_counts_not_used_as_training_targets": {
+            "musc": 51052,
+            "eyem": 38569,
+            "elec": 33130,
+            "eyem_musc": 18677,
+            "musc_elec": 7651,
+            "chew": 6482,
+            "eyem_elec": 2422,
+            "eyem_chew": 864,
+            "shiv": 613,
+            "chew_musc": 243,
+            "elpp": 172,
+            "chew_elec": 152,
+            "eyem_shiv": 45,
+            "shiv_elec": 1
+          },
+          "curation_limitation": "TUH channels are slot-filled into the 59-channel tensor. This is a waveform-only self-supervised pretraining source, not a supervised artifact-mask source.",
+          "files": {
+            "x_memmap": "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap/x_float32.dat",
+            "manifest": "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap/manifest.csv"
+          }
+        }
+      }
+    ],
+    "holdout_excluded_from_flow_pretraining": {
+      "subject": "sub-30",
+      "run": 6,
+      "reason": "Avoid using the final supervised test run even during self-supervised pretraining."
+    }
+  },
+  "x_shape": [
+    154444,
+    59,
+    2500
+  ],
+  "train_windows": 123555,
+  "validation_windows": 23167,
+  "test_windows": 7722,
+  "train_source_counts": {
+    "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 29599,
+    "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap": 28716,
+    "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 26112,
+    "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap": 23138,
+    "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap": 11233,
+    "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 4757
+  },
+  "validation_source_counts": {
+    "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 5643,
+    "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap": 5275,
+    "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 4921,
+    "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap": 4326,
+    "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap": 2142,
+    "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 860
+  },
+  "test_source_counts": {
+    "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap": 1842,
+    "outputs_v6_flowmatching_study/window_datasets/tuh_59ch_10s_250hz_flow_memmap": 1792,
+    "outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap": 1611,
+    "outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap": 1497,
+    "outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap": 705,
+    "outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap": 275
+  },
+  "model": "FlowMatchingChannelTimeUNet",
+  "parameters": 26658,
+  "objective": "MSE between predicted velocity and x1 - x0",
+  "formula": "x0 = Gaussian noise; x1 = real EEG; xt = (1 - t) * x0 + t * x1; target velocity = x1 - x0",
+  "epochs_requested": 20,
+  "epochs_completed": 20,
+  "batch_size": 8,
+  "learning_rate": 0.001,
+  "early_stopping": {
+    "enabled": true,
+    "monitor": "validation_flow_mse",
+    "mode": "min",
+    "patience": 5,
+    "min_delta": 0.0001,
+    "stopped_early": false,
+    "best_epoch": 20,
+    "best_validation_flow_mse": 0.4432277141915824
+  },
+  "final_metrics": {
+    "epoch": 20,
+    "train_flow_mse": 0.44650418663742736,
+    "train_flow_rmse": 0.6682096876261429,
+    "validation_flow_mse": 0.4432277141915824,
+    "validation_flow_rmse": 0.6657534935631825,
+    "test_flow_mse": 0.442401386610247,
+    "test_flow_rmse": 0.6651326082896907,
+    "best_validation_flow_mse_so_far": 0.4432277141915824,
+    "is_best_epoch": true
+  },
+  "files": {
+    "best_checkpoint_by_validation_mse": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt",
+    "final_checkpoint": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/flowmatching_channel_time_final.pt",
+    "metrics_csv": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/flowmatching_metrics.csv",
+    "summary_json": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/summary.json",
+    "combined_index_csv": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/combined_flow_dataset_index.csv"
+  }
+}

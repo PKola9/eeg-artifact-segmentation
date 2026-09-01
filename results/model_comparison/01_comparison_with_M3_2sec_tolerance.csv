@@ -1,0 +1,5 @@
+"model","pretraining","selected_threshold","validation_dice","strict_test_dice","test_precision","test_recall","dice_type","tolerance_seconds","tolerant_test_dice","tolerant_precision","tolerant_recall"
+"M1_random_splitunet","none","0.25","0.4012001854646173","0.39387209941916","0.3250314697069864","0.499708839525168","strict_sample_overlap","0","","",""
+"M2_physio_flowinit_splitunet","PhysioMotion_only_flow_matching","0.4","0.3974035140601448","0.4038764018083824","0.3391007227040097","0.4992427156457352","strict_sample_overlap","0","","",""
+"M3_improved_multidataset_flowinit_splitunet","PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_flow_matching","0.35","0.41606264343779065","0.4327726881847931","0.3563882232674375","0.5508322114305862","strict_sample_overlap","0","","",""
+"M3_improved_multidataset_flowinit_splitunet_2sec_tolerance","PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_flow_matching","0.35","0.41606264343779065","0.4327726881847931","0.3563882232674375","0.5508322114305862","tolerant_interval_overlap","2.0","0.5812946292356017","0.4335932065421683","0.8816112126165977"

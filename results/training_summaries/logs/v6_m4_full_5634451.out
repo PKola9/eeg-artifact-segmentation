@@ -1,0 +1,131 @@
+V6 M4 full Slurm job started on: iris-193
+Start time: Mon Aug 10 10:25:32 UTC 2026
+Working directory: /home/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE
+Python 3.12.13
+torch: 2.5.1
+CUDA available: True
+GPU: Tesla V100-SXM2-32GB
+
+Checking required datasets...
+All required datasets exist.
+
+Cleaning incomplete old M4 flow/training/threshold outputs...
+
+STEP 1: Full M4 flow-matching pretraining
+Device: cuda
+Datasets: ['/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap', 'outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap', 'outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap', 'outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap', 'outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap']
+Combined x shape: [118661, 59, 2500]
+Train/validation/test windows: 94929 17799 5933
+Train source counts: {'/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap': 29727, 'outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap': 26138, 'outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap': 23099, 'outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap': 11237, 'outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap': 4728}
+Validation source counts: {'/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap': 5481, 'outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap': 4926, 'outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap': 4377, 'outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap': 2154, 'outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap': 861}
+Test source counts: {'/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap': 1876, 'outputs_v6_flowmatching_study/window_datasets/eegmmidb_59ch_10s_250hz_flow_memmap': 1580, 'outputs_v6_flowmatching_study/window_datasets/chbmit_chb01_59ch_10s_250hz_flow_memmap': 1485, 'outputs_v6_flowmatching_study/window_datasets/deap_59ch_10s_250hz_flow_memmap': 689, 'outputs_v6_flowmatching_study/window_datasets/bci_iv_ds1_59ch_10s_250hz_flow_memmap': 303}
+Model parameters: 26658
+Objective: MSE(predicted velocity, x1 - x0)
+epoch 1/20 train_mse=0.54274 val_mse=0.49128 test_mse=0.48969 val_rmse=0.70091 saved new best validation-MSE checkpoint
+epoch 2/20 train_mse=0.48167 val_mse=0.48681 test_mse=0.48672 val_rmse=0.69772 saved new best validation-MSE checkpoint
+epoch 3/20 train_mse=0.47089 val_mse=0.46059 test_mse=0.46415 val_rmse=0.67867 saved new best validation-MSE checkpoint
+epoch 4/20 train_mse=0.46535 val_mse=0.47500 test_mse=0.47724 val_rmse=0.68920 no validation-MSE improvement (1/5)
+epoch 5/20 train_mse=0.46327 val_mse=0.46494 test_mse=0.46581 val_rmse=0.68187 no validation-MSE improvement (2/5)
+epoch 6/20 train_mse=0.45896 val_mse=0.45584 test_mse=0.45693 val_rmse=0.67516 saved new best validation-MSE checkpoint
+epoch 7/20 train_mse=0.45744 val_mse=0.45444 test_mse=0.45893 val_rmse=0.67412 saved new best validation-MSE checkpoint
+epoch 8/20 train_mse=0.45624 val_mse=0.47349 test_mse=0.47840 val_rmse=0.68811 no validation-MSE improvement (1/5)
+epoch 9/20 train_mse=0.45619 val_mse=0.45919 test_mse=0.45832 val_rmse=0.67764 no validation-MSE improvement (2/5)
+epoch 10/20 train_mse=0.45526 val_mse=0.47522 test_mse=0.47716 val_rmse=0.68937 no validation-MSE improvement (3/5)
+epoch 11/20 train_mse=0.45340 val_mse=0.45750 test_mse=0.46182 val_rmse=0.67639 no validation-MSE improvement (4/5)
+epoch 12/20 train_mse=0.45345 val_mse=0.45023 test_mse=0.45207 val_rmse=0.67099 saved new best validation-MSE checkpoint
+epoch 13/20 train_mse=0.45219 val_mse=0.45532 test_mse=0.45940 val_rmse=0.67478 no validation-MSE improvement (1/5)
+epoch 14/20 train_mse=0.45176 val_mse=0.46457 test_mse=0.46046 val_rmse=0.68159 no validation-MSE improvement (2/5)
+epoch 15/20 train_mse=0.45172 val_mse=0.46388 test_mse=0.46710 val_rmse=0.68109 no validation-MSE improvement (3/5)
+epoch 16/20 train_mse=0.45211 val_mse=0.44961 test_mse=0.45116 val_rmse=0.67053 saved new best validation-MSE checkpoint
+epoch 17/20 train_mse=0.45183 val_mse=0.46126 test_mse=0.46662 val_rmse=0.67916 no validation-MSE improvement (1/5)
+epoch 18/20 train_mse=0.45094 val_mse=0.46172 test_mse=0.46161 val_rmse=0.67950 no validation-MSE improvement (2/5)
+epoch 19/20 train_mse=0.44963 val_mse=0.46314 test_mse=0.46240 val_rmse=0.68054 no validation-MSE improvement (3/5)
+epoch 20/20 train_mse=0.45037 val_mse=0.44913 test_mse=0.45447 val_rmse=0.67017 saved new best validation-MSE checkpoint
+Saved:
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/flowmatching_channel_time_final.pt
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/flowmatching_metrics.csv
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/summary.json
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/combined_flow_dataset_index.csv
+
+STEP 2: M4 Split U-Net segmentation training
+Device: cuda
+Dataset: /home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap
+Total windows: 37310
+Train/validation/test windows: 22886 5563 226
+Balanced training enabled: {'enabled': True, 'clean_to_artifact_ratio_requested': 1.0, 'original_train_windows': 31521, 'original_artifact_windows': 11443, 'original_clean_windows': 20078, 'balanced_train_windows': 22886, 'balanced_artifact_windows': 11443, 'balanced_clean_windows': 11443, 'balanced_artifact_fraction_window_level': 0.5, 'note': 'Only training indices are balanced. Validation and test remain unchanged.'}
+Holdout test: sub-30 run-06
+x per window: [59, 2500]
+y per window: [59, 2500]
+estimated_pos_weight: 22.801158048287245
+pos_weight_scale: 1.0
+pos_weight_override: 1.0
+effective_pos_weight: 1.0
+pos_weight_source: manual override
+Model architecture: split_unet
+Model parameters: 26609
+Flow-matching initialization: outputs_v6_flowmatching_study/flowmatching_runs/V6_M4_physio_bci_eegmmidb_deap_chbmit_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt
+Copied flow-matching weights: 70
+epoch 1/30 train_loss=1.1117 val_dice=0.2465 test_dice=0.2696 test_f1=0.2696 saved new best checkpoint
+epoch 2/30 train_loss=0.9793 val_dice=0.2604 test_dice=0.2853 test_f1=0.2853 saved new best checkpoint
+epoch 3/30 train_loss=0.9504 val_dice=0.2008 test_dice=0.1917 test_f1=0.1917 no improvement (1/8)
+epoch 4/30 train_loss=0.9293 val_dice=0.2745 test_dice=0.3075 test_f1=0.3075 saved new best checkpoint
+epoch 5/30 train_loss=0.9145 val_dice=0.2954 test_dice=0.3319 test_f1=0.3319 saved new best checkpoint
+epoch 6/30 train_loss=0.9047 val_dice=0.2392 test_dice=0.2396 test_f1=0.2396 no improvement (1/8)
+epoch 7/30 train_loss=0.8951 val_dice=0.2723 test_dice=0.2829 test_f1=0.2829 no improvement (2/8)
+epoch 8/30 train_loss=0.8873 val_dice=0.2909 test_dice=0.2949 test_f1=0.2949 no improvement (3/8)
+epoch 9/30 train_loss=0.8800 val_dice=0.2967 test_dice=0.3272 test_f1=0.3272 saved new best checkpoint
+epoch 10/30 train_loss=0.8748 val_dice=0.3241 test_dice=0.3347 test_f1=0.3347 saved new best checkpoint
+epoch 11/30 train_loss=0.8704 val_dice=0.3217 test_dice=0.3166 test_f1=0.3166 no improvement (1/8)
+epoch 12/30 train_loss=0.8657 val_dice=0.3163 test_dice=0.3481 test_f1=0.3481 no improvement (2/8)
+epoch 13/30 train_loss=0.8612 val_dice=0.3252 test_dice=0.3787 test_f1=0.3787 saved new best checkpoint
+epoch 14/30 train_loss=0.8550 val_dice=0.2915 test_dice=0.2986 test_f1=0.2986 no improvement (1/8)
+epoch 15/30 train_loss=0.8520 val_dice=0.2852 test_dice=0.2790 test_f1=0.2790 no improvement (2/8)
+epoch 16/30 train_loss=0.8495 val_dice=0.3373 test_dice=0.3430 test_f1=0.3430 saved new best checkpoint
+epoch 17/30 train_loss=0.8444 val_dice=0.2515 test_dice=0.2555 test_f1=0.2555 no improvement (1/8)
+epoch 18/30 train_loss=0.8432 val_dice=0.3415 test_dice=0.3662 test_f1=0.3662 saved new best checkpoint
+epoch 19/30 train_loss=0.8422 val_dice=0.2718 test_dice=0.2763 test_f1=0.2763 no improvement (1/8)
+epoch 20/30 train_loss=0.8380 val_dice=0.3347 test_dice=0.3676 test_f1=0.3676 no improvement (2/8)
+epoch 21/30 train_loss=0.8357 val_dice=0.3301 test_dice=0.3251 test_f1=0.3251 no improvement (3/8)
+epoch 22/30 train_loss=0.8326 val_dice=0.3320 test_dice=0.3296 test_f1=0.3296 no improvement (4/8)
+epoch 23/30 train_loss=0.8315 val_dice=0.3350 test_dice=0.3399 test_f1=0.3399 no improvement (5/8)
+epoch 24/30 train_loss=0.8248 val_dice=0.3232 test_dice=0.3281 test_f1=0.3281 no improvement (6/8)
+epoch 25/30 train_loss=0.8250 val_dice=0.3226 test_dice=0.3336 test_f1=0.3336 no improvement (7/8)
+epoch 26/30 train_loss=0.8241 val_dice=0.3362 test_dice=0.3200 test_f1=0.3200 no improvement (8/8)
+Early stopping at epoch 26. Best validation Dice 0.3415 at epoch 18.
+Saved:
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M4_extra_deap_chbmit_flowinit_splitunet/splitunet_channel_time_final.pt
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M4_extra_deap_chbmit_flowinit_splitunet/splitunet_channel_time_best_val_dice.pt
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M4_extra_deap_chbmit_flowinit_splitunet/training_metrics.csv
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M4_extra_deap_chbmit_flowinit_splitunet/summary.json
+
+STEP 3: M4 threshold sweep
+Saved:
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/threshold_sweeps/V6_M4_extra_deap_chbmit_flowinit_splitunet/validation_threshold_sweep.csv
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/threshold_sweeps/V6_M4_extra_deap_chbmit_flowinit_splitunet/test_at_selected_and_0p5_threshold.csv
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/threshold_sweeps/V6_M4_extra_deap_chbmit_flowinit_splitunet/threshold_tuning_summary.json
+
+Best validation threshold: 0.2
+Validation Dice: 0.3681423532508761
+Test Dice at selected threshold: 0.39535914455912524
+Test Precision at selected threshold: 0.32440496958545545
+Test Recall at selected threshold: 0.5060409120535094
+Test Dice at threshold 0.5: 0.36624247102062
+
+STEP 4: Update final comparison table
+Saved final comparison tables:
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/final_tables/V6_three_or_four_model_clean_comparison.csv
+/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/final_tables/V6_three_model_clean_comparison.csv
+                                      model                                                                pretraining  selected_threshold  validation_dice  test_dice_selected_threshold  test_precision_selected_threshold  test_recall_selected_threshold  test_dice_threshold_0p5
+                        M1_random_splitunet                                                                       none                0.25         0.401200                      0.393872                           0.325031                        0.499709                 0.391370
+               M2_physio_flowinit_splitunet                                            PhysioMotion_only_flow_matching                0.40         0.397404                      0.403876                           0.339101                        0.499243                 0.403329
+M3_improved_multidataset_flowinit_splitunet                       PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_flow_matching                0.35         0.416063                      0.432773                           0.356388                        0.550832                 0.432768
+        M4_extra_dataset_flowinit_splitunet PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_plus_DEAP_plus_CHBMIT_flow_matching                0.20         0.368142                      0.395359                           0.324405                        0.506041                 0.366242
+
+V6 M4 full Slurm job finished at: Mon Aug 10 16:44:20 UTC 2026
+Final comparison:
+model,pretraining,selected_threshold,validation_dice,test_dice_selected_threshold,test_precision_selected_threshold,test_recall_selected_threshold,test_dice_threshold_0p5
+M1_random_splitunet,none,0.25,0.4012001854646173,0.39387209941916,0.3250314697069864,0.499708839525168,0.3913698684666958
+M2_physio_flowinit_splitunet,PhysioMotion_only_flow_matching,0.4,0.3974035140601448,0.4038764018083824,0.3391007227040097,0.4992427156457352,0.4033291061595792
+M3_improved_multidataset_flowinit_splitunet,PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_flow_matching,0.35,0.41606264343779065,0.4327726881847931,0.3563882232674375,0.5508322114305862,0.4327678173859971
+M4_extra_dataset_flowinit_splitunet,PhysioMotion_plus_BCI_IV_plus_EEGMMIDB_plus_DEAP_plus_CHBMIT_flow_matching,0.2,0.3681423532508761,0.3953591445591252,0.3244049695854554,0.5060409120535094,0.36624247102062

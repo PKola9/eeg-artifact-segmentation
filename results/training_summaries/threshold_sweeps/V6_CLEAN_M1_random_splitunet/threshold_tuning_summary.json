@@ -1,0 +1,58 @@
+{
+  "purpose": "Select artifact probability threshold using validation Dice, then evaluate on held-out test run.",
+  "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+  "model": "outputs_v6_flowmatching_study/training_runs/V6_CLEAN_M1_random_splitunet/splitunet_channel_time_best_val_dice.pt",
+  "model_arch": "split_unet",
+  "device": "cuda",
+  "holdout_test": {
+    "subject": "sub-30",
+    "run": 6,
+    "test_windows": 226
+  },
+  "validation_windows": 5563,
+  "threshold_selection_rule": "choose threshold with highest validation Dice",
+  "best_validation_threshold": 0.25,
+  "best_validation_metrics": {
+    "threshold": 0.25,
+    "dice": 0.4012001854646173,
+    "iou": 0.25093834876457477,
+    "f1": 0.4012001854646173,
+    "precision": 0.37592050958500944,
+    "recall_sensitivity": 0.43012497024854035,
+    "specificity": 0.9671155905401698,
+    "accuracy": 0.9434746475654826,
+    "tp": 15537954,
+    "fp": 25795130,
+    "tn": 758623092,
+    "fn": 20586324
+  },
+  "test_metrics_at_best_validation_threshold": {
+    "threshold": 0.25,
+    "dice": 0.39387209941916007,
+    "iou": 0.24523084324524855,
+    "f1": 0.39387209941916007,
+    "precision": 0.32503146970698643,
+    "recall_sensitivity": 0.49970883952516804,
+    "specificity": 0.9511921522589808,
+    "accuracy": 0.9309108744562772,
+    "tp": 748292,
+    "fp": 1553922,
+    "tn": 30283622,
+    "fn": 749164
+  },
+  "test_metrics_at_threshold_0p5": {
+    "threshold": 0.5,
+    "dice": 0.39136986846669586,
+    "iou": 0.24329388141800648,
+    "f1": 0.39136986846669586,
+    "precision": 0.3920884839377551,
+    "recall_sensitivity": 0.3906538823177442,
+    "specificity": 0.9715119357196648,
+    "accuracy": 0.9454189590520474,
+    "tp": 584987,
+    "fp": 906990,
+    "tn": 30930554,
+    "fn": 912469
+  },
+  "important_note": "The test set was not used to choose the threshold."
+}

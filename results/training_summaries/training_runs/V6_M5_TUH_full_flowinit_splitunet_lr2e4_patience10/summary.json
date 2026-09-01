@@ -1,0 +1,1619 @@
+{
+  "task": "Version 2 channel-time EEG artifact segmentation",
+  "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+  "dataset_metadata": {
+    "task": "Version 2 channel-time binary EEG artifact segmentation",
+    "source": "original PhysioMotion EDF files",
+    "sharded": true,
+    "shard_dir": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/shards",
+    "total_windows": 37310,
+    "artifact_windows": 13565,
+    "clean_windows": 23745,
+    "x_shape_per_window": [
+      59,
+      2500
+    ],
+    "y_shape_per_window": [
+      59,
+      2500
+    ],
+    "channel_names": [
+      "Fpz",
+      "Fp1",
+      "Fp2",
+      "AF3",
+      "AF4",
+      "AF7",
+      "AF8",
+      "Fz",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "FCz",
+      "FC1",
+      "FC2",
+      "FC3",
+      "FC4",
+      "FC5",
+      "FC6",
+      "FT7",
+      "FT8",
+      "Cz",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "T7",
+      "T8",
+      "CP1",
+      "CP2",
+      "CP3",
+      "CP4",
+      "CP5",
+      "CP6",
+      "TP7",
+      "TP8",
+      "Pz",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "POz",
+      "PO3",
+      "PO4",
+      "PO5",
+      "PO6",
+      "PO7",
+      "PO8",
+      "Oz",
+      "O1",
+      "O2"
+    ],
+    "mean_artifact_fraction_channel_time": 0.0420147626164658,
+    "processed_runs": [
+      {
+        "subject": "sub-1",
+        "run": 1,
+        "windows": 249,
+        "artifact_windows": 88,
+        "clean_windows": 161,
+        "shard_name": "sub-1_run-01.npz"
+      },
+      {
+        "subject": "sub-1",
+        "run": 2,
+        "windows": 264,
+        "artifact_windows": 86,
+        "clean_windows": 178,
+        "shard_name": "sub-1_run-02.npz"
+      },
+      {
+        "subject": "sub-1",
+        "run": 3,
+        "windows": 228,
+        "artifact_windows": 86,
+        "clean_windows": 142,
+        "shard_name": "sub-1_run-03.npz"
+      },
+      {
+        "subject": "sub-1",
+        "run": 4,
+        "windows": 223,
+        "artifact_windows": 94,
+        "clean_windows": 129,
+        "shard_name": "sub-1_run-04.npz"
+      },
+      {
+        "subject": "sub-1",
+        "run": 5,
+        "windows": 221,
+        "artifact_windows": 94,
+        "clean_windows": 127,
+        "shard_name": "sub-1_run-05.npz"
+      },
+      {
+        "subject": "sub-1",
+        "run": 6,
+        "windows": 224,
+        "artifact_windows": 101,
+        "clean_windows": 123,
+        "shard_name": "sub-1_run-06.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 1,
+        "windows": 279,
+        "artifact_windows": 112,
+        "clean_windows": 167,
+        "shard_name": "sub-2_run-01.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 2,
+        "windows": 260,
+        "artifact_windows": 118,
+        "clean_windows": 142,
+        "shard_name": "sub-2_run-02.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 3,
+        "windows": 230,
+        "artifact_windows": 127,
+        "clean_windows": 103,
+        "shard_name": "sub-2_run-03.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 4,
+        "windows": 231,
+        "artifact_windows": 109,
+        "clean_windows": 122,
+        "shard_name": "sub-2_run-04.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 5,
+        "windows": 231,
+        "artifact_windows": 96,
+        "clean_windows": 135,
+        "shard_name": "sub-2_run-05.npz"
+      },
+      {
+        "subject": "sub-2",
+        "run": 6,
+        "windows": 232,
+        "artifact_windows": 109,
+        "clean_windows": 123,
+        "shard_name": "sub-2_run-06.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 1,
+        "windows": 227,
+        "artifact_windows": 90,
+        "clean_windows": 137,
+        "shard_name": "sub-3_run-01.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 2,
+        "windows": 227,
+        "artifact_windows": 80,
+        "clean_windows": 147,
+        "shard_name": "sub-3_run-02.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 71,
+        "clean_windows": 155,
+        "shard_name": "sub-3_run-03.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 4,
+        "windows": 227,
+        "artifact_windows": 80,
+        "clean_windows": 147,
+        "shard_name": "sub-3_run-04.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 5,
+        "windows": 225,
+        "artifact_windows": 73,
+        "clean_windows": 152,
+        "shard_name": "sub-3_run-05.npz"
+      },
+      {
+        "subject": "sub-3",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 63,
+        "clean_windows": 163,
+        "shard_name": "sub-3_run-06.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 1,
+        "windows": 245,
+        "artifact_windows": 80,
+        "clean_windows": 165,
+        "shard_name": "sub-5_run-01.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 2,
+        "windows": 229,
+        "artifact_windows": 82,
+        "clean_windows": 147,
+        "shard_name": "sub-5_run-02.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 75,
+        "clean_windows": 151,
+        "shard_name": "sub-5_run-03.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 4,
+        "windows": 225,
+        "artifact_windows": 89,
+        "clean_windows": 136,
+        "shard_name": "sub-5_run-04.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 5,
+        "windows": 225,
+        "artifact_windows": 78,
+        "clean_windows": 147,
+        "shard_name": "sub-5_run-05.npz"
+      },
+      {
+        "subject": "sub-5",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 82,
+        "clean_windows": 144,
+        "shard_name": "sub-5_run-06.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 1,
+        "windows": 242,
+        "artifact_windows": 93,
+        "clean_windows": 149,
+        "shard_name": "sub-7_run-01.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 2,
+        "windows": 226,
+        "artifact_windows": 99,
+        "clean_windows": 127,
+        "shard_name": "sub-7_run-02.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 88,
+        "clean_windows": 138,
+        "shard_name": "sub-7_run-03.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 4,
+        "windows": 238,
+        "artifact_windows": 68,
+        "clean_windows": 170,
+        "shard_name": "sub-7_run-04.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 5,
+        "windows": 229,
+        "artifact_windows": 72,
+        "clean_windows": 157,
+        "shard_name": "sub-7_run-05.npz"
+      },
+      {
+        "subject": "sub-7",
+        "run": 6,
+        "windows": 231,
+        "artifact_windows": 101,
+        "clean_windows": 130,
+        "shard_name": "sub-7_run-06.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 1,
+        "windows": 232,
+        "artifact_windows": 76,
+        "clean_windows": 156,
+        "shard_name": "sub-9_run-01.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 2,
+        "windows": 228,
+        "artifact_windows": 91,
+        "clean_windows": 137,
+        "shard_name": "sub-9_run-02.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 3,
+        "windows": 227,
+        "artifact_windows": 87,
+        "clean_windows": 140,
+        "shard_name": "sub-9_run-03.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 4,
+        "windows": 247,
+        "artifact_windows": 69,
+        "clean_windows": 178,
+        "shard_name": "sub-9_run-04.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 5,
+        "windows": 227,
+        "artifact_windows": 70,
+        "clean_windows": 157,
+        "shard_name": "sub-9_run-05.npz"
+      },
+      {
+        "subject": "sub-9",
+        "run": 6,
+        "windows": 231,
+        "artifact_windows": 56,
+        "clean_windows": 175,
+        "shard_name": "sub-9_run-06.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 1,
+        "windows": 225,
+        "artifact_windows": 65,
+        "clean_windows": 160,
+        "shard_name": "sub-10_run-01.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 2,
+        "windows": 224,
+        "artifact_windows": 71,
+        "clean_windows": 153,
+        "shard_name": "sub-10_run-02.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 82,
+        "clean_windows": 144,
+        "shard_name": "sub-10_run-03.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 4,
+        "windows": 224,
+        "artifact_windows": 75,
+        "clean_windows": 149,
+        "shard_name": "sub-10_run-04.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 5,
+        "windows": 223,
+        "artifact_windows": 68,
+        "clean_windows": 155,
+        "shard_name": "sub-10_run-05.npz"
+      },
+      {
+        "subject": "sub-10",
+        "run": 6,
+        "windows": 225,
+        "artifact_windows": 72,
+        "clean_windows": 153,
+        "shard_name": "sub-10_run-06.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 1,
+        "windows": 231,
+        "artifact_windows": 49,
+        "clean_windows": 182,
+        "shard_name": "sub-11_run-01.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 2,
+        "windows": 227,
+        "artifact_windows": 50,
+        "clean_windows": 177,
+        "shard_name": "sub-11_run-02.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 57,
+        "clean_windows": 169,
+        "shard_name": "sub-11_run-03.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 4,
+        "windows": 235,
+        "artifact_windows": 50,
+        "clean_windows": 185,
+        "shard_name": "sub-11_run-04.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 5,
+        "windows": 226,
+        "artifact_windows": 84,
+        "clean_windows": 142,
+        "shard_name": "sub-11_run-05.npz"
+      },
+      {
+        "subject": "sub-11",
+        "run": 6,
+        "windows": 225,
+        "artifact_windows": 100,
+        "clean_windows": 125,
+        "shard_name": "sub-11_run-06.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 1,
+        "windows": 248,
+        "artifact_windows": 95,
+        "clean_windows": 153,
+        "shard_name": "sub-12_run-01.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 2,
+        "windows": 229,
+        "artifact_windows": 88,
+        "clean_windows": 141,
+        "shard_name": "sub-12_run-02.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 3,
+        "windows": 227,
+        "artifact_windows": 84,
+        "clean_windows": 143,
+        "shard_name": "sub-12_run-03.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 4,
+        "windows": 229,
+        "artifact_windows": 89,
+        "clean_windows": 140,
+        "shard_name": "sub-12_run-04.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 5,
+        "windows": 231,
+        "artifact_windows": 109,
+        "clean_windows": 122,
+        "shard_name": "sub-12_run-05.npz"
+      },
+      {
+        "subject": "sub-12",
+        "run": 6,
+        "windows": 230,
+        "artifact_windows": 92,
+        "clean_windows": 138,
+        "shard_name": "sub-12_run-06.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 1,
+        "windows": 230,
+        "artifact_windows": 68,
+        "clean_windows": 162,
+        "shard_name": "sub-13_run-01.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 2,
+        "windows": 227,
+        "artifact_windows": 56,
+        "clean_windows": 171,
+        "shard_name": "sub-13_run-02.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 50,
+        "clean_windows": 176,
+        "shard_name": "sub-13_run-03.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 4,
+        "windows": 226,
+        "artifact_windows": 60,
+        "clean_windows": 166,
+        "shard_name": "sub-13_run-04.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 5,
+        "windows": 226,
+        "artifact_windows": 84,
+        "clean_windows": 142,
+        "shard_name": "sub-13_run-05.npz"
+      },
+      {
+        "subject": "sub-13",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 87,
+        "clean_windows": 139,
+        "shard_name": "sub-13_run-06.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 1,
+        "windows": 240,
+        "artifact_windows": 74,
+        "clean_windows": 166,
+        "shard_name": "sub-14_run-01.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 2,
+        "windows": 233,
+        "artifact_windows": 32,
+        "clean_windows": 201,
+        "shard_name": "sub-14_run-02.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 3,
+        "windows": 227,
+        "artifact_windows": 43,
+        "clean_windows": 184,
+        "shard_name": "sub-14_run-03.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 4,
+        "windows": 230,
+        "artifact_windows": 67,
+        "clean_windows": 163,
+        "shard_name": "sub-14_run-04.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 5,
+        "windows": 229,
+        "artifact_windows": 70,
+        "clean_windows": 159,
+        "shard_name": "sub-14_run-05.npz"
+      },
+      {
+        "subject": "sub-14",
+        "run": 6,
+        "windows": 230,
+        "artifact_windows": 36,
+        "clean_windows": 194,
+        "shard_name": "sub-14_run-06.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 1,
+        "windows": 243,
+        "artifact_windows": 79,
+        "clean_windows": 164,
+        "shard_name": "sub-15_run-01.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 2,
+        "windows": 238,
+        "artifact_windows": 83,
+        "clean_windows": 155,
+        "shard_name": "sub-15_run-02.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 3,
+        "windows": 235,
+        "artifact_windows": 79,
+        "clean_windows": 156,
+        "shard_name": "sub-15_run-03.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 4,
+        "windows": 241,
+        "artifact_windows": 86,
+        "clean_windows": 155,
+        "shard_name": "sub-15_run-04.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 5,
+        "windows": 229,
+        "artifact_windows": 89,
+        "clean_windows": 140,
+        "shard_name": "sub-15_run-05.npz"
+      },
+      {
+        "subject": "sub-15",
+        "run": 6,
+        "windows": 231,
+        "artifact_windows": 71,
+        "clean_windows": 160,
+        "shard_name": "sub-15_run-06.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 1,
+        "windows": 227,
+        "artifact_windows": 74,
+        "clean_windows": 153,
+        "shard_name": "sub-16_run-01.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 2,
+        "windows": 224,
+        "artifact_windows": 79,
+        "clean_windows": 145,
+        "shard_name": "sub-16_run-02.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 78,
+        "clean_windows": 148,
+        "shard_name": "sub-16_run-03.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 4,
+        "windows": 226,
+        "artifact_windows": 81,
+        "clean_windows": 145,
+        "shard_name": "sub-16_run-04.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 5,
+        "windows": 225,
+        "artifact_windows": 84,
+        "clean_windows": 141,
+        "shard_name": "sub-16_run-05.npz"
+      },
+      {
+        "subject": "sub-16",
+        "run": 6,
+        "windows": 225,
+        "artifact_windows": 89,
+        "clean_windows": 136,
+        "shard_name": "sub-16_run-06.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 1,
+        "windows": 238,
+        "artifact_windows": 59,
+        "clean_windows": 179,
+        "shard_name": "sub-17_run-01.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 2,
+        "windows": 226,
+        "artifact_windows": 42,
+        "clean_windows": 184,
+        "shard_name": "sub-17_run-02.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 3,
+        "windows": 228,
+        "artifact_windows": 63,
+        "clean_windows": 165,
+        "shard_name": "sub-17_run-03.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 4,
+        "windows": 245,
+        "artifact_windows": 54,
+        "clean_windows": 191,
+        "shard_name": "sub-17_run-04.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 5,
+        "windows": 207,
+        "artifact_windows": 69,
+        "clean_windows": 138,
+        "shard_name": "sub-17_run-05.npz"
+      },
+      {
+        "subject": "sub-17",
+        "run": 6,
+        "windows": 229,
+        "artifact_windows": 70,
+        "clean_windows": 159,
+        "shard_name": "sub-17_run-06.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 1,
+        "windows": 231,
+        "artifact_windows": 85,
+        "clean_windows": 146,
+        "shard_name": "sub-18_run-01.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 2,
+        "windows": 228,
+        "artifact_windows": 88,
+        "clean_windows": 140,
+        "shard_name": "sub-18_run-02.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 3,
+        "windows": 229,
+        "artifact_windows": 81,
+        "clean_windows": 148,
+        "shard_name": "sub-18_run-03.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 4,
+        "windows": 230,
+        "artifact_windows": 84,
+        "clean_windows": 146,
+        "shard_name": "sub-18_run-04.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 5,
+        "windows": 234,
+        "artifact_windows": 85,
+        "clean_windows": 149,
+        "shard_name": "sub-18_run-05.npz"
+      },
+      {
+        "subject": "sub-18",
+        "run": 6,
+        "windows": 227,
+        "artifact_windows": 73,
+        "clean_windows": 154,
+        "shard_name": "sub-18_run-06.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 1,
+        "windows": 223,
+        "artifact_windows": 60,
+        "clean_windows": 163,
+        "shard_name": "sub-19_run-01.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 2,
+        "windows": 222,
+        "artifact_windows": 92,
+        "clean_windows": 130,
+        "shard_name": "sub-19_run-02.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 3,
+        "windows": 224,
+        "artifact_windows": 68,
+        "clean_windows": 156,
+        "shard_name": "sub-19_run-03.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 4,
+        "windows": 222,
+        "artifact_windows": 91,
+        "clean_windows": 131,
+        "shard_name": "sub-19_run-04.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 5,
+        "windows": 222,
+        "artifact_windows": 83,
+        "clean_windows": 139,
+        "shard_name": "sub-19_run-05.npz"
+      },
+      {
+        "subject": "sub-19",
+        "run": 6,
+        "windows": 222,
+        "artifact_windows": 86,
+        "clean_windows": 136,
+        "shard_name": "sub-19_run-06.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 1,
+        "windows": 229,
+        "artifact_windows": 100,
+        "clean_windows": 129,
+        "shard_name": "sub-20_run-01.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 2,
+        "windows": 227,
+        "artifact_windows": 93,
+        "clean_windows": 134,
+        "shard_name": "sub-20_run-02.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 3,
+        "windows": 225,
+        "artifact_windows": 88,
+        "clean_windows": 137,
+        "shard_name": "sub-20_run-03.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 4,
+        "windows": 240,
+        "artifact_windows": 65,
+        "clean_windows": 175,
+        "shard_name": "sub-20_run-04.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 5,
+        "windows": 230,
+        "artifact_windows": 62,
+        "clean_windows": 168,
+        "shard_name": "sub-20_run-05.npz"
+      },
+      {
+        "subject": "sub-20",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 69,
+        "clean_windows": 157,
+        "shard_name": "sub-20_run-06.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 1,
+        "windows": 323,
+        "artifact_windows": 90,
+        "clean_windows": 233,
+        "shard_name": "sub-21_run-01.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 2,
+        "windows": 262,
+        "artifact_windows": 90,
+        "clean_windows": 172,
+        "shard_name": "sub-21_run-02.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 3,
+        "windows": 241,
+        "artifact_windows": 102,
+        "clean_windows": 139,
+        "shard_name": "sub-21_run-03.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 4,
+        "windows": 255,
+        "artifact_windows": 81,
+        "clean_windows": 174,
+        "shard_name": "sub-21_run-04.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 5,
+        "windows": 238,
+        "artifact_windows": 86,
+        "clean_windows": 152,
+        "shard_name": "sub-21_run-05.npz"
+      },
+      {
+        "subject": "sub-21",
+        "run": 6,
+        "windows": 232,
+        "artifact_windows": 84,
+        "clean_windows": 148,
+        "shard_name": "sub-21_run-06.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 1,
+        "windows": 240,
+        "artifact_windows": 78,
+        "clean_windows": 162,
+        "shard_name": "sub-22_run-01.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 2,
+        "windows": 226,
+        "artifact_windows": 75,
+        "clean_windows": 151,
+        "shard_name": "sub-22_run-02.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 71,
+        "clean_windows": 155,
+        "shard_name": "sub-22_run-03.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 4,
+        "windows": 225,
+        "artifact_windows": 58,
+        "clean_windows": 167,
+        "shard_name": "sub-22_run-04.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 5,
+        "windows": 224,
+        "artifact_windows": 50,
+        "clean_windows": 174,
+        "shard_name": "sub-22_run-05.npz"
+      },
+      {
+        "subject": "sub-22",
+        "run": 6,
+        "windows": 225,
+        "artifact_windows": 55,
+        "clean_windows": 170,
+        "shard_name": "sub-22_run-06.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 1,
+        "windows": 228,
+        "artifact_windows": 75,
+        "clean_windows": 153,
+        "shard_name": "sub-23_run-01.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 2,
+        "windows": 225,
+        "artifact_windows": 86,
+        "clean_windows": 139,
+        "shard_name": "sub-23_run-02.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 3,
+        "windows": 226,
+        "artifact_windows": 84,
+        "clean_windows": 142,
+        "shard_name": "sub-23_run-03.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 4,
+        "windows": 226,
+        "artifact_windows": 87,
+        "clean_windows": 139,
+        "shard_name": "sub-23_run-04.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 5,
+        "windows": 223,
+        "artifact_windows": 82,
+        "clean_windows": 141,
+        "shard_name": "sub-23_run-05.npz"
+      },
+      {
+        "subject": "sub-23",
+        "run": 6,
+        "windows": 223,
+        "artifact_windows": 87,
+        "clean_windows": 136,
+        "shard_name": "sub-23_run-06.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 1,
+        "windows": 229,
+        "artifact_windows": 122,
+        "clean_windows": 107,
+        "shard_name": "sub-24_run-01.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 2,
+        "windows": 223,
+        "artifact_windows": 120,
+        "clean_windows": 103,
+        "shard_name": "sub-24_run-02.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 3,
+        "windows": 223,
+        "artifact_windows": 120,
+        "clean_windows": 103,
+        "shard_name": "sub-24_run-03.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 4,
+        "windows": 224,
+        "artifact_windows": 119,
+        "clean_windows": 105,
+        "shard_name": "sub-24_run-04.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 5,
+        "windows": 200,
+        "artifact_windows": 117,
+        "clean_windows": 83,
+        "shard_name": "sub-24_run-05.npz"
+      },
+      {
+        "subject": "sub-24",
+        "run": 6,
+        "windows": 223,
+        "artifact_windows": 126,
+        "clean_windows": 97,
+        "shard_name": "sub-24_run-06.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 1,
+        "windows": 224,
+        "artifact_windows": 132,
+        "clean_windows": 92,
+        "shard_name": "sub-25_run-01.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 2,
+        "windows": 225,
+        "artifact_windows": 133,
+        "clean_windows": 92,
+        "shard_name": "sub-25_run-02.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 3,
+        "windows": 225,
+        "artifact_windows": 133,
+        "clean_windows": 92,
+        "shard_name": "sub-25_run-03.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 4,
+        "windows": 225,
+        "artifact_windows": 136,
+        "clean_windows": 89,
+        "shard_name": "sub-25_run-04.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 5,
+        "windows": 225,
+        "artifact_windows": 131,
+        "clean_windows": 94,
+        "shard_name": "sub-25_run-05.npz"
+      },
+      {
+        "subject": "sub-25",
+        "run": 6,
+        "windows": 223,
+        "artifact_windows": 126,
+        "clean_windows": 97,
+        "shard_name": "sub-25_run-06.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 1,
+        "windows": 239,
+        "artifact_windows": 90,
+        "clean_windows": 149,
+        "shard_name": "sub-26_run-01.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 2,
+        "windows": 230,
+        "artifact_windows": 90,
+        "clean_windows": 140,
+        "shard_name": "sub-26_run-02.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 3,
+        "windows": 228,
+        "artifact_windows": 89,
+        "clean_windows": 139,
+        "shard_name": "sub-26_run-03.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 4,
+        "windows": 238,
+        "artifact_windows": 84,
+        "clean_windows": 154,
+        "shard_name": "sub-26_run-04.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 5,
+        "windows": 230,
+        "artifact_windows": 77,
+        "clean_windows": 153,
+        "shard_name": "sub-26_run-05.npz"
+      },
+      {
+        "subject": "sub-26",
+        "run": 6,
+        "windows": 249,
+        "artifact_windows": 22,
+        "clean_windows": 227,
+        "shard_name": "sub-26_run-06.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 1,
+        "windows": 242,
+        "artifact_windows": 86,
+        "clean_windows": 156,
+        "shard_name": "sub-27_run-01.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 2,
+        "windows": 228,
+        "artifact_windows": 80,
+        "clean_windows": 148,
+        "shard_name": "sub-27_run-02.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 3,
+        "windows": 227,
+        "artifact_windows": 76,
+        "clean_windows": 151,
+        "shard_name": "sub-27_run-03.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 4,
+        "windows": 230,
+        "artifact_windows": 84,
+        "clean_windows": 146,
+        "shard_name": "sub-27_run-04.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 5,
+        "windows": 226,
+        "artifact_windows": 92,
+        "clean_windows": 134,
+        "shard_name": "sub-27_run-05.npz"
+      },
+      {
+        "subject": "sub-27",
+        "run": 6,
+        "windows": 224,
+        "artifact_windows": 94,
+        "clean_windows": 130,
+        "shard_name": "sub-27_run-06.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 1,
+        "windows": 230,
+        "artifact_windows": 127,
+        "clean_windows": 103,
+        "shard_name": "sub-28_run-01.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 2,
+        "windows": 227,
+        "artifact_windows": 124,
+        "clean_windows": 103,
+        "shard_name": "sub-28_run-02.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 3,
+        "windows": 225,
+        "artifact_windows": 108,
+        "clean_windows": 117,
+        "shard_name": "sub-28_run-03.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 4,
+        "windows": 231,
+        "artifact_windows": 108,
+        "clean_windows": 123,
+        "shard_name": "sub-28_run-04.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 5,
+        "windows": 225,
+        "artifact_windows": 124,
+        "clean_windows": 101,
+        "shard_name": "sub-28_run-05.npz"
+      },
+      {
+        "subject": "sub-28",
+        "run": 6,
+        "windows": 224,
+        "artifact_windows": 122,
+        "clean_windows": 102,
+        "shard_name": "sub-28_run-06.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 1,
+        "windows": 231,
+        "artifact_windows": 65,
+        "clean_windows": 166,
+        "shard_name": "sub-29_run-01.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 2,
+        "windows": 233,
+        "artifact_windows": 78,
+        "clean_windows": 155,
+        "shard_name": "sub-29_run-02.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 3,
+        "windows": 225,
+        "artifact_windows": 67,
+        "clean_windows": 158,
+        "shard_name": "sub-29_run-03.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 4,
+        "windows": 226,
+        "artifact_windows": 67,
+        "clean_windows": 159,
+        "shard_name": "sub-29_run-04.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 5,
+        "windows": 226,
+        "artifact_windows": 74,
+        "clean_windows": 152,
+        "shard_name": "sub-29_run-05.npz"
+      },
+      {
+        "subject": "sub-29",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 76,
+        "clean_windows": 150,
+        "shard_name": "sub-29_run-06.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 1,
+        "windows": 233,
+        "artifact_windows": 96,
+        "clean_windows": 137,
+        "shard_name": "sub-30_run-01.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 2,
+        "windows": 230,
+        "artifact_windows": 97,
+        "clean_windows": 133,
+        "shard_name": "sub-30_run-02.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 3,
+        "windows": 228,
+        "artifact_windows": 91,
+        "clean_windows": 137,
+        "shard_name": "sub-30_run-03.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 4,
+        "windows": 224,
+        "artifact_windows": 66,
+        "clean_windows": 158,
+        "shard_name": "sub-30_run-04.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 5,
+        "windows": 227,
+        "artifact_windows": 79,
+        "clean_windows": 148,
+        "shard_name": "sub-30_run-05.npz"
+      },
+      {
+        "subject": "sub-30",
+        "run": 6,
+        "windows": 226,
+        "artifact_windows": 74,
+        "clean_windows": 152,
+        "shard_name": "sub-30_run-06.npz"
+      }
+    ],
+    "label_counts": {
+      "hor_headm": 20944,
+      "tongue": 10102,
+      "blink_hor_headm": 6753,
+      "eyebrow": 4246,
+      "ver_headm": 4202,
+      "tongue_eyebrow": 3229,
+      "swallow": 2845,
+      "ver_eyem": 2458,
+      "blink": 2423,
+      "hor_eyem": 2174,
+      "blink_eyebrow": 2084,
+      "swallow_eyebrow": 1458,
+      "chew": 609,
+      "blink_ver_headm": 595
+    },
+    "top_annotation_channels": {
+      "Fp2-F8": 4942,
+      "F7-Fp1": 4843,
+      "F8-T8": 4786,
+      "Fp1-F7": 4725,
+      "F7-T7": 4283,
+      "Fp2-F4": 2764,
+      "F4-F8": 2475,
+      "F7-F3": 2447,
+      "T7-P7": 2353,
+      "T8-P8": 2171,
+      "Fp1-Fp2": 2101,
+      "Fp1-F3": 2036,
+      "C4-T8": 1952,
+      "Fz-F4": 1870,
+      "T7-C3": 1644,
+      "P7-O1": 1532,
+      "O2-P8": 1526,
+      "O1-O2": 1455,
+      "F3-Fz": 1452,
+      "P3-O1": 1246,
+      "F4-C4": 1211,
+      "C3-Cz": 1129,
+      "P4-O2": 1112,
+      "P8-O2": 1055,
+      "Cz-C4": 1036,
+      "C4-P4": 910,
+      "P7-P3": 891,
+      "ALL": 844,
+      "P4-P8": 842,
+      "F3-C3": 712,
+      "C3-P3": 420,
+      "P3-Pz": 335,
+      "Pz-P4": 242,
+      "Fz-Cz": 215,
+      "Cz-Pz": 108
+    },
+    "settings": {
+      "max_subjects": 30,
+      "max_runs_per_subject": 6,
+      "runs": "",
+      "window_sec": 10.0,
+      "stride_sec": 5.0,
+      "downsample_to_hz": 250.0,
+      "output_name": "full_sub30_runs6_channel_time_10s_250hz_sharded"
+    },
+    "files": {
+      "manifest_csv": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/manifest.csv",
+      "metadata_json": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/metadata.json",
+      "shards": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded/shards"
+    },
+    "storage": "memmap float32 arrays",
+    "source_sharded_dir": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_sharded",
+    "dataset_dir": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+    "manifest": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/manifest.csv",
+    "x_memmap": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/x_float32.dat",
+    "y_memmap": "outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap/y_float32.dat",
+    "x_shape": [
+      37310,
+      59,
+      2500
+    ],
+    "y_shape": [
+      37310,
+      59,
+      2500
+    ],
+    "note": "Scientific values are identical to the sharded dataset; only storage format changed for faster GPU training."
+  },
+  "total_windows": 37310,
+  "train_windows": 22886,
+  "validation_windows": 5563,
+  "test_windows": 226,
+  "balanced_training": {
+    "enabled": true,
+    "clean_to_artifact_ratio_requested": 1.0,
+    "original_train_windows": 31521,
+    "original_artifact_windows": 11443,
+    "original_clean_windows": 20078,
+    "balanced_train_windows": 22886,
+    "balanced_artifact_windows": 11443,
+    "balanced_clean_windows": 11443,
+    "balanced_artifact_fraction_window_level": 0.5,
+    "note": "Only training indices are balanced. Validation and test remain unchanged."
+  },
+  "holdout_subject": "sub-30",
+  "holdout_run": 6,
+  "model": "split_unet",
+  "parameters": 26609,
+  "initialization": "flow-matching pretrained weights",
+  "flow_checkpoint": "outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt",
+  "transfer_report": {
+    "flow_checkpoint": "outputs_v6_flowmatching_study/flowmatching_runs/V6_M5_TUH_full_stride10_flowmatching_20ep/flowmatching_channel_time_best_validation_mse.pt",
+    "copied_count": 70,
+    "skipped_count": 2,
+    "copied_keys": [
+      "down1.block.temporal.0.weight",
+      "down1.block.temporal.0.bias",
+      "down1.block.temporal.1.weight",
+      "down1.block.temporal.1.bias",
+      "down1.block.temporal.1.running_mean",
+      "down1.block.temporal.1.running_var",
+      "down1.block.temporal.1.num_batches_tracked",
+      "down1.block.electrode.0.weight",
+      "down1.block.electrode.0.bias",
+      "down1.block.electrode.1.weight",
+      "down1.block.electrode.1.bias",
+      "down1.block.electrode.1.running_mean",
+      "down1.block.electrode.1.running_var",
+      "down1.block.electrode.1.num_batches_tracked",
+      "down2.block.temporal.0.weight",
+      "down2.block.temporal.0.bias",
+      "down2.block.temporal.1.weight",
+      "down2.block.temporal.1.bias",
+      "down2.block.temporal.1.running_mean",
+      "down2.block.temporal.1.running_var",
+      "down2.block.temporal.1.num_batches_tracked",
+      "down2.block.electrode.0.weight",
+      "down2.block.electrode.0.bias",
+      "down2.block.electrode.1.weight",
+      "down2.block.electrode.1.bias",
+      "down2.block.electrode.1.running_mean",
+      "down2.block.electrode.1.running_var",
+      "down2.block.electrode.1.num_batches_tracked",
+      "bottleneck.temporal.0.weight",
+      "bottleneck.temporal.0.bias",
+      "bottleneck.temporal.1.weight",
+      "bottleneck.temporal.1.bias",
+      "bottleneck.temporal.1.running_mean",
+      "bottleneck.temporal.1.running_var",
+      "bottleneck.temporal.1.num_batches_tracked",
+      "bottleneck.electrode.0.weight",
+      "bottleneck.electrode.0.bias",
+      "bottleneck.electrode.1.weight",
+      "bottleneck.electrode.1.bias",
+      "bottleneck.electrode.1.running_mean",
+      "bottleneck.electrode.1.running_var",
+      "bottleneck.electrode.1.num_batches_tracked",
+      "up2.block.temporal.0.weight",
+      "up2.block.temporal.0.bias",
+      "up2.block.temporal.1.weight",
+      "up2.block.temporal.1.bias",
+      "up2.block.temporal.1.running_mean",
+      "up2.block.temporal.1.running_var",
+      "up2.block.temporal.1.num_batches_tracked",
+      "up2.block.electrode.0.weight",
+      "up2.block.electrode.0.bias",
+      "up2.block.electrode.1.weight",
+      "up2.block.electrode.1.bias",
+      "up2.block.electrode.1.running_mean",
+      "up2.block.electrode.1.running_var",
+      "up2.block.electrode.1.num_batches_tracked",
+      "up1.block.temporal.0.weight",
+      "up1.block.temporal.0.bias",
+      "up1.block.temporal.1.weight",
+      "up1.block.temporal.1.bias",
+      "up1.block.temporal.1.running_mean",
+      "up1.block.temporal.1.running_var",
+      "up1.block.temporal.1.num_batches_tracked",
+      "up1.block.electrode.0.weight",
+      "up1.block.electrode.0.bias",
+      "up1.block.electrode.1.weight",
+      "up1.block.electrode.1.bias",
+      "up1.block.electrode.1.running_mean",
+      "up1.block.electrode.1.running_var",
+      "up1.block.electrode.1.num_batches_tracked"
+    ],
+    "skipped": [
+      {
+        "key": "out.weight",
+        "reason": "not transferred; task-specific or no matching prefix"
+      },
+      {
+        "key": "out.bias",
+        "reason": "not transferred; task-specific or no matching prefix"
+      }
+    ]
+  },
+  "loss": "BCEWithLogitsLoss + soft Dice loss",
+  "positive_class_weight": {
+    "estimated_from_manifest": 22.801158048287245,
+    "scale": 1.0,
+    "override": 1.0,
+    "effective": 1.0,
+    "source": "manual override"
+  },
+  "epochs_requested": 40,
+  "epochs_completed": 40,
+  "batch_size": 8,
+  "learning_rate": 0.0002,
+  "early_stopping": {
+    "enabled": true,
+    "monitor": "validation_dice",
+    "patience": 10,
+    "stopped_early": false,
+    "best_epoch": 33,
+    "best_validation_dice": 0.35452108214828476
+  },
+  "final_metrics": {
+    "epoch": 40,
+    "train_loss": 0.8612866118103644,
+    "validation_loss": 0.906576205527806,
+    "validation_dice": 0.35227441967543704,
+    "validation_iou": 0.21379435015267975,
+    "validation_f1": 0.352274419675437,
+    "validation_precision": 0.3878043903337861,
+    "validation_recall_sensitivity": 0.3227084289407805,
+    "validation_specificity": 0.976539389978628,
+    "test_loss": 1.0035323948986763,
+    "test_dice": 0.3466322929522813,
+    "test_iou": 0.20965227001514006,
+    "test_f1": 0.3466322929522813,
+    "test_precision": 0.33518423463682273,
+    "test_recall_sensitivity": 0.35889001079163596,
+    "test_specificity": 0.9665193709665545,
+    "test_accuracy": 0.9392237888105595
+  },
+  "files": {
+    "final_model": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M5_TUH_full_flowinit_splitunet_lr2e4_patience10/splitunet_channel_time_final.pt",
+    "best_model_by_validation_dice": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M5_TUH_full_flowinit_splitunet_lr2e4_patience10/splitunet_channel_time_best_val_dice.pt",
+    "metrics": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M5_TUH_full_flowinit_splitunet_lr2e4_patience10/training_metrics.csv",
+    "summary": "/mnt/aiongpfs/users/pkola/thesis_eeg/BFM2_V6_FLOWMATCHING_STUDY_FULL_PIPELINE/outputs_v6_flowmatching_study/training_runs/V6_M5_TUH_full_flowinit_splitunet_lr2e4_patience10/summary.json"
+  }
+}

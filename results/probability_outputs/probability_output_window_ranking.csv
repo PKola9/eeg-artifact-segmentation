@@ -1,0 +1,6 @@
+rank,folder,start_seconds,end_seconds,threshold,dice,precision,recall,show_priority
+1,sub-30_run-06_306s_to_316s_thr_0.35,306,316,0.35,0.8063,0.8565,0.7616,show_first
+2,sub-30_run-06_310s_to_320s_thr_0.35,310,320,0.35,0.7732,0.7903,0.7568,show_second
+3,sub-30_run-06_840s_to_850s_thr_0.35,840,850,0.35,0.7393,0.6932,0.7919,show_if_time
+4,sub-30_run-06_850s_to_860s_thr_0.35,850,860,0.35,0.7314,0.6471,0.8409,show_if_time
+5,sub-30_run-06_760s_to_770s_thr_0.35,760,770,0.35,0.6235,0.7862,0.5166,optional

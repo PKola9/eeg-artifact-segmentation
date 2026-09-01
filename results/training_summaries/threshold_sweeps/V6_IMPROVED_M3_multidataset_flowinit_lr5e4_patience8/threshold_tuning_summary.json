@@ -1,0 +1,58 @@
+{
+  "purpose": "Select artifact probability threshold using validation Dice, then evaluate on held-out test run.",
+  "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+  "model": "outputs_v6_flowmatching_study/training_runs/V6_IMPROVED_M3_multidataset_flowinit_lr5e4_patience8/splitunet_channel_time_best_val_dice.pt",
+  "model_arch": "split_unet",
+  "device": "cuda",
+  "holdout_test": {
+    "subject": "sub-30",
+    "run": 6,
+    "test_windows": 226
+  },
+  "validation_windows": 5563,
+  "threshold_selection_rule": "choose threshold with highest validation Dice",
+  "best_validation_threshold": 0.35,
+  "best_validation_metrics": {
+    "threshold": 0.35,
+    "dice": 0.41606264343779065,
+    "iou": 0.2626761984708893,
+    "f1": 0.41606264343779065,
+    "precision": 0.3775781589739627,
+    "recall_sensitivity": 0.4632825049126241,
+    "specificity": 0.9648297576136624,
+    "accuracy": 0.9427492043373744,
+    "tp": 16735746,
+    "fp": 27588179,
+    "tn": 756830043,
+    "fn": 19388532
+  },
+  "test_metrics_at_best_validation_threshold": {
+    "threshold": 0.35,
+    "dice": 0.4327726881847931,
+    "iou": 0.2761390673338531,
+    "f1": 0.4327726881847931,
+    "precision": 0.3563882232674375,
+    "recall_sensitivity": 0.5508322114305862,
+    "specificity": 0.9532120002723828,
+    "accuracy": 0.9351365231738413,
+    "tp": 824847,
+    "fp": 1489615,
+    "tn": 30347929,
+    "fn": 672609
+  },
+  "test_metrics_at_threshold_0p5": {
+    "threshold": 0.5,
+    "dice": 0.4327678173859971,
+    "iou": 0.2761351012229593,
+    "f1": 0.4327678173859971,
+    "precision": 0.40154529069774086,
+    "recall_sensitivity": 0.46925519013580363,
+    "specificity": 0.9671057227278587,
+    "accuracy": 0.944741562921854,
+    "tp": 702689,
+    "fp": 1047273,
+    "tn": 30790271,
+    "fn": 794767
+  },
+  "important_note": "The test set was not used to choose the threshold."
+}

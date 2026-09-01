@@ -1,0 +1,58 @@
+{
+  "purpose": "Select artifact probability threshold using validation Dice, then evaluate on held-out test run.",
+  "dataset_dir": "/home/users/pkola/thesis_eeg/BFM2_ChannelTimeSegmentation_V2_WORKING/outputs_v2_channel_time/window_datasets/full_sub30_runs6_channel_time_10s_250hz_memmap",
+  "model": "outputs_v6_flowmatching_study/training_runs/V6_M5_TUH_full_flowinit_splitunet_lr2e4_patience10/splitunet_channel_time_best_val_dice.pt",
+  "model_arch": "split_unet",
+  "device": "cuda",
+  "holdout_test": {
+    "subject": "sub-30",
+    "run": 6,
+    "test_windows": 226
+  },
+  "validation_windows": 5563,
+  "threshold_selection_rule": "choose threshold with highest validation Dice",
+  "best_validation_threshold": 0.3,
+  "best_validation_metrics": {
+    "threshold": 0.3,
+    "dice": 0.36387953330819894,
+    "iou": 0.22240387594683367,
+    "f1": 0.36387953330819894,
+    "precision": 0.32813324152740536,
+    "recall_sensitivity": 0.4083662793205168,
+    "specificity": 0.9614934773914521,
+    "accuracy": 0.9371421236559959,
+    "tp": 14751937,
+    "fp": 30205218,
+    "tn": 754213004,
+    "fn": 21372341
+  },
+  "test_metrics_at_best_validation_threshold": {
+    "threshold": 0.3,
+    "dice": 0.3567767300454944,
+    "iou": 0.2171200570056266,
+    "f1": 0.35677673004549443,
+    "precision": 0.28734925163219804,
+    "recall_sensitivity": 0.47044186941052024,
+    "specificity": 0.9451234052475908,
+    "accuracy": 0.9238000299985001,
+    "tp": 704466,
+    "fp": 1747136,
+    "tn": 30090408,
+    "fn": 792990
+  },
+  "test_metrics_at_threshold_0p5": {
+    "threshold": 0.5,
+    "dice": 0.36131366598473164,
+    "iou": 0.22048982681109314,
+    "f1": 0.36131366598473164,
+    "precision": 0.3516045762888585,
+    "recall_sensitivity": 0.3715741898259448,
+    "specificity": 0.9677711006854046,
+    "accuracy": 0.9409890805459727,
+    "tp": 556416,
+    "fp": 1026089,
+    "tn": 30811455,
+    "fn": 941040
+  },
+  "important_note": "The test set was not used to choose the threshold."
+}
