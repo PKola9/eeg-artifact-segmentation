@@ -25,17 +25,21 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from models.splitunet_channel_time_segmentation import SplitUNetChannelTimeSegmenter
+from models.splitunet_transformer_bottleneck_segmentation import SplitUNetTransformerBottleneckSegmenter
 from models.temporal_unet_no_channel_mixing import TemporalUNetNoChannelMixing
 from models.eeg_conformer_segmentation import EEGConformerSegmentation
 from training.train_channel_time_segmentation_sharded import (
     load_channel_time_dataset,
     make_manifest_holdout_split,
+    make_manifest_multi_subject_holdout_split,
 )
 
 
 def load_model(checkpoint: Path, device: torch.device, model_arch: str, base_features: int = 8) -> torch.nn.Module:
     if model_arch == "split_unet":
         model = SplitUNetChannelTimeSegmenter(base_features=base_features)
+    elif model_arch == "split_unet_transformer_bottleneck":
+        model = SplitUNetTransformerBottleneckSegmenter(base_features=base_features)
     elif model_arch == "temporal_unet_no_channel_mixing":
         model = TemporalUNetNoChannelMixing()
     elif model_arch == "eeg_conformer_segmentation":
@@ -124,7 +128,12 @@ def main() -> None:
     parser.add_argument("--model", required=True)
     parser.add_argument(
         "--model-arch",
-        choices=["split_unet", "temporal_unet_no_channel_mixing", "eeg_conformer_segmentation"],
+        choices=[
+            "split_unet",
+            "split_unet_transformer_bottleneck",
+            "temporal_unet_no_channel_mixing",
+            "eeg_conformer_segmentation",
+        ],
         default="split_unet",
     )
     parser.add_argument(
@@ -134,7 +143,22 @@ def main() -> None:
         help="Width of Split U-Net checkpoint. Default 8 preserves previous experiments.",
     )
     parser.add_argument("--holdout-subject", default="sub-30")
+    parser.add_argument(
+        "--holdout-subjects",
+        nargs="+",
+        default=None,
+        help=(
+            "Optional stricter split: hold out every run for multiple subjects, "
+            "for example --holdout-subjects sub-10 sub-20 sub-30. "
+            "When this is used, --holdout-run is ignored."
+        ),
+    )
     parser.add_argument("--holdout-run", type=int, default=6)
+    parser.add_argument(
+        "--holdout-all-runs",
+        action="store_true",
+        help="Hold out every run for the selected subject. Keeps old subject/run behavior unchanged when omitted.",
+    )
     parser.add_argument("--val-fraction", type=float, default=0.15)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch-size", type=int, default=4)
@@ -149,13 +173,25 @@ def main() -> None:
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     dataset = load_channel_time_dataset(dataset_dir)
-    _, val_idx, test_idx = make_manifest_holdout_split(
-        dataset.manifest,
-        holdout_subject=args.holdout_subject,
-        holdout_run=args.holdout_run,
-        seed=args.seed,
-        val_fraction_from_train_pool=args.val_fraction,
-    )
+    holdout_subjects = args.holdout_subjects
+    if holdout_subjects:
+        holdout_run = None
+        _, val_idx, test_idx = make_manifest_multi_subject_holdout_split(
+            dataset.manifest,
+            holdout_subjects=holdout_subjects,
+            seed=args.seed,
+            val_fraction_from_train_pool=args.val_fraction,
+        )
+    else:
+        holdout_run = None if args.holdout_all_runs else args.holdout_run
+        holdout_subjects = [args.holdout_subject]
+        _, val_idx, test_idx = make_manifest_holdout_split(
+            dataset.manifest,
+            holdout_subject=args.holdout_subject,
+            holdout_run=holdout_run,
+            seed=args.seed,
+            val_fraction_from_train_pool=args.val_fraction,
+        )
 
     val_loader = DataLoader(Subset(dataset, val_idx), batch_size=args.batch_size, shuffle=False, num_workers=0)
     test_loader = DataLoader(Subset(dataset, test_idx), batch_size=args.batch_size, shuffle=False, num_workers=0)
@@ -178,11 +214,15 @@ def main() -> None:
         "dataset_dir": str(dataset_dir),
         "model": str(model_path),
         "model_arch": args.model_arch,
-        "base_features": args.base_features if args.model_arch == "split_unet" else None,
+        "base_features": args.base_features
+        if args.model_arch in {"split_unet", "split_unet_transformer_bottleneck"}
+        else None,
         "device": str(device),
         "holdout_test": {
             "subject": args.holdout_subject,
-            "run": args.holdout_run,
+            "subjects": holdout_subjects,
+            "run": holdout_run,
+            "all_runs": bool(args.holdout_all_runs or args.holdout_subjects),
             "test_windows": int(len(test_idx)),
         },
         "validation_windows": int(len(val_idx)),

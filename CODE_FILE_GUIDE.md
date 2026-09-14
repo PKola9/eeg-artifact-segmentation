@@ -58,6 +58,10 @@ Defines a comparison model that focuses on temporal processing without explicitl
 
 Defines the attention-based EEG-Conformer-style segmentation baseline used as an additional comparison model.
 
+### `models/splitunet_transformer_bottleneck_segmentation.py`
+
+Defines the post-presentation attention-flow model. The model keeps the Split U-Net segmentation structure, adds a Transformer bottleneck for longer-range temporal context, and allows compatible convolutional layers to be initialized from the M3 flow-matching checkpoint.
+
 ## Training
 
 ### `training/pretrain_flowmatching_channel_time_multidataset_earlystop.py`
@@ -126,6 +130,18 @@ Summarizes model-level comparison results across the Split U-Net variants.
 
 Builds or updates final comparison tables directly from saved threshold-sweep outputs.
 
+### `evaluation/summarize_three_subject_holdouts.py`
+
+Summarizes the three-subject held-out evaluation sets used after the presentation.
+
+### `evaluation/summarize_subjectwise_cv.py`
+
+Summarizes the five-fold subject-wise cross-validation experiments for the random Split U-Net and M3 flow-initialized Split U-Net.
+
+### `evaluation/summarize_attention_cv_comparison.py`
+
+Combines the subject-wise cross-validation results for the random Split U-Net, M3 flow-initialized Split U-Net, and attention-flow model into side-by-side comparison tables.
+
 ## Scripts
 
 ### `scripts/00_check_environment_and_data.sh`
@@ -160,6 +176,10 @@ Runs the additional DEAP and CHB-MIT flow-matching ablation experiment.
 
 Runs the additional TUH flow-matching ablation experiment.
 
+### `scripts/08_train_attention_flow_subjectwise_cv.slurm`
+
+SLURM batch script for the post-presentation attention-flow subject-wise cross-validation experiment.
+
 ### `scripts/train_tuh_ablation.slurm`
 
 SLURM batch script for running the TUH ablation on the HPC cluster.
@@ -179,3 +199,9 @@ Important result areas:
 - `results/interval_demo/`: selected channel-level start/end interval examples.
 - `results/probability_outputs/`: probability-map outputs used to derive artifact intervals.
 - `results/training_summaries/`: raw experiment summaries, logs, threshold sweeps, and small checkpoints.
+- `results/post_presentation_update/`: subject-wise cross-validation results, attention-flow comparison tables, and post-presentation summary metrics.
+
+## Report documents
+
+- `docs/post_presentation_update/post_presentation_evaluation_report.docx`: polished update report containing the post-presentation experiments and comparison tables.
+- `docs/post_presentation_update/attention_flow_methodology_report.docx`: detailed explanation of the attention-flow methodology and model design.

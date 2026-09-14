@@ -1,0 +1,6 @@
+Fold,Held-out test subjects
+fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30"
+fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29"
+fold2,"sub-3, sub-12, sub-17, sub-22, sub-27"
+fold3,"sub-5, sub-13, sub-18, sub-23, sub-28"
+fold4,"sub-7, sub-9, sub-14, sub-19, sub-24"

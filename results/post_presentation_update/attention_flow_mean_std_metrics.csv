@@ -1,0 +1,4 @@
+Method,Completed folds,Expected folds,Dice mean,Dice std,IoU mean,IoU std,Precision mean,Precision std,Recall mean,Recall std,Accuracy mean,Accuracy std
+Random Split U-Net,5.0,5.0,0.3882,0.0223,0.241,0.0171,0.3797,0.0478,0.4032,0.0318,0.9464,0.0065
+M3 Flow-initialized Split U-Net,5.0,5.0,0.3696,0.0402,0.2273,0.0302,0.3587,0.0662,0.3895,0.0359,0.9438,0.0079
+Attention + M3 Flow-initialized Split U-Net,5.0,5.0,0.6349,0.0439,0.4663,0.0473,0.6597,0.0503,0.6151,0.0616,0.9705,0.0017

@@ -43,6 +43,9 @@ from splitunet_channel_time_segmentation import (  # noqa: E402
     SplitUNetChannelTimeSegmenter,
     count_parameters,
 )
+from splitunet_transformer_bottleneck_segmentation import (  # noqa: E402
+    SplitUNetTransformerBottleneckSegmenter,
+)
 from temporal_unet_no_channel_mixing import TemporalUNetNoChannelMixing  # noqa: E402
 from eeg_conformer_segmentation import EEGConformerSegmentation  # noqa: E402
 
@@ -158,13 +161,41 @@ def transfer_flowmatching_weights(seg_model: nn.Module, flow_checkpoint: Path) -
 def make_manifest_holdout_split(
     manifest: pd.DataFrame,
     holdout_subject: str,
-    holdout_run: int,
+    holdout_run: int | None,
     seed: int,
     val_fraction_from_train_pool: float,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    test_mask = (manifest["subject"].astype(str) == holdout_subject) & (
-        manifest["run"].astype(int) == int(holdout_run)
-    )
+    subject_mask = manifest["subject"].astype(str) == holdout_subject
+    if holdout_run is None:
+        test_mask = subject_mask
+    else:
+        test_mask = subject_mask & (manifest["run"].astype(int) == int(holdout_run))
+    test_idx = manifest.index[test_mask].to_numpy().copy()
+    train_pool_idx = manifest.index[~test_mask].to_numpy().copy()
+
+    rng = np.random.default_rng(seed)
+    rng.shuffle(train_pool_idx)
+    val_count = int(round(len(train_pool_idx) * val_fraction_from_train_pool))
+    val_idx = train_pool_idx[:val_count]
+    train_idx = train_pool_idx[val_count:]
+    return train_idx, val_idx, test_idx
+
+
+def make_manifest_multi_subject_holdout_split(
+    manifest: pd.DataFrame,
+    holdout_subjects: list[str],
+    seed: int,
+    val_fraction_from_train_pool: float,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """
+    Hold out every run for multiple selected subjects.
+
+    This is used for the stricter subject-level generalization experiment:
+    the test set contains complete unseen subjects, and validation is sampled
+    only from the remaining training pool.
+    """
+    subjects = [str(subject) for subject in holdout_subjects]
+    test_mask = manifest["subject"].astype(str).isin(subjects)
     test_idx = manifest.index[test_mask].to_numpy().copy()
     train_pool_idx = manifest.index[~test_mask].to_numpy().copy()
 
@@ -349,16 +380,37 @@ def main() -> None:
     parser.add_argument("--dataset-dir", required=True)
     parser.add_argument(
         "--model-arch",
-        choices=["split_unet", "temporal_unet_no_channel_mixing", "eeg_conformer_segmentation"],
+        choices=[
+            "split_unet",
+            "split_unet_transformer_bottleneck",
+            "temporal_unet_no_channel_mixing",
+            "eeg_conformer_segmentation",
+        ],
         default="split_unet",
         help=(
             "split_unet learns temporal patterns and EEG channel relationships; "
+            "split_unet_transformer_bottleneck adds temporal attention inside the Split U-Net bottleneck; "
             "temporal_unet_no_channel_mixing processes each channel independently; "
             "eeg_conformer_segmentation is a CNN-Transformer baseline adapted for dense segmentation."
         ),
     )
     parser.add_argument("--holdout-subject", default="sub-30")
+    parser.add_argument(
+        "--holdout-subjects",
+        nargs="+",
+        default=None,
+        help=(
+            "Optional stricter split: hold out every run for multiple subjects, "
+            "for example --holdout-subjects sub-10 sub-20 sub-30. "
+            "When this is used, --holdout-run is ignored."
+        ),
+    )
     parser.add_argument("--holdout-run", type=int, default=6)
+    parser.add_argument(
+        "--holdout-all-runs",
+        action="store_true",
+        help="Hold out every run for the selected subject. Keeps old subject/run behavior unchanged when omitted.",
+    )
     parser.add_argument("--val-fraction", type=float, default=0.15)
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--batch-size", type=int, default=8)
@@ -403,13 +455,25 @@ def main() -> None:
 
     dataset_dir = Path(args.dataset_dir)
     dataset = load_channel_time_dataset(dataset_dir)
-    train_idx, val_idx, test_idx = make_manifest_holdout_split(
-        dataset.manifest,
-        holdout_subject=args.holdout_subject,
-        holdout_run=args.holdout_run,
-        seed=args.seed,
-        val_fraction_from_train_pool=args.val_fraction,
-    )
+    holdout_subjects = args.holdout_subjects
+    if holdout_subjects:
+        holdout_run = None
+        train_idx, val_idx, test_idx = make_manifest_multi_subject_holdout_split(
+            dataset.manifest,
+            holdout_subjects=holdout_subjects,
+            seed=args.seed,
+            val_fraction_from_train_pool=args.val_fraction,
+        )
+    else:
+        holdout_run = None if args.holdout_all_runs else args.holdout_run
+        holdout_subjects = [args.holdout_subject]
+        train_idx, val_idx, test_idx = make_manifest_holdout_split(
+            dataset.manifest,
+            holdout_subject=args.holdout_subject,
+            holdout_run=holdout_run,
+            seed=args.seed,
+            val_fraction_from_train_pool=args.val_fraction,
+        )
 
     balance_report = {"enabled": False}
     if args.balanced_train_windows:
@@ -427,6 +491,8 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if args.model_arch == "split_unet":
         model = SplitUNetChannelTimeSegmenter(base_features=args.base_features)
+    elif args.model_arch == "split_unet_transformer_bottleneck":
+        model = SplitUNetTransformerBottleneckSegmenter(base_features=args.base_features)
     elif args.model_arch == "temporal_unet_no_channel_mixing":
         model = TemporalUNetNoChannelMixing()
     elif args.model_arch == "eeg_conformer_segmentation":
@@ -436,8 +502,12 @@ def main() -> None:
 
     transfer_report = None
     if args.flow_checkpoint:
-        if args.model_arch != "split_unet":
-            raise ValueError("Flow-matching initialization is currently supported only for --model-arch split_unet.")
+        flow_supported_arches = {"split_unet", "split_unet_transformer_bottleneck"}
+        if args.model_arch not in flow_supported_arches:
+            raise ValueError(
+                "Flow-matching initialization is currently supported only for "
+                "--model-arch split_unet or split_unet_transformer_bottleneck."
+            )
         transfer_report = transfer_flowmatching_weights(model, Path(args.flow_checkpoint))
     model = model.to(device)
     estimated_pos_weight = estimate_pos_weight_from_manifest(dataset.manifest)
@@ -464,7 +534,12 @@ def main() -> None:
     print("Train/validation/test windows:", len(train_idx), len(val_idx), len(test_idx))
     if args.balanced_train_windows:
         print("Balanced training enabled:", balance_report)
-    print("Holdout test:", args.holdout_subject, f"run-{args.holdout_run:02d}")
+    if args.holdout_subjects:
+        print("Holdout test:", ", ".join(holdout_subjects), "all runs")
+    elif holdout_run is None:
+        print("Holdout test:", args.holdout_subject, "all runs")
+    else:
+        print("Holdout test:", args.holdout_subject, f"run-{holdout_run:02d}")
     print("x per window:", dataset.metadata.get("x_shape_per_window"))
     print("y per window:", dataset.metadata.get("y_shape_per_window"))
     print("estimated_pos_weight:", float(estimated_pos_weight))
@@ -473,7 +548,7 @@ def main() -> None:
     print("effective_pos_weight:", float(pos_weight.item()))
     print("pos_weight_source:", pos_weight_source)
     print("Model architecture:", args.model_arch)
-    if args.model_arch == "split_unet":
+    if args.model_arch in {"split_unet", "split_unet_transformer_bottleneck"}:
         print("Base features:", args.base_features)
     print("Model parameters:", count_parameters(model))
     if transfer_report:
@@ -571,9 +646,13 @@ def main() -> None:
         "test_windows": len(test_idx),
         "balanced_training": balance_report,
         "holdout_subject": args.holdout_subject,
-        "holdout_run": args.holdout_run,
+        "holdout_subjects": holdout_subjects,
+        "holdout_run": holdout_run,
+        "holdout_all_runs": bool(args.holdout_all_runs or args.holdout_subjects),
         "model": args.model_arch,
-        "base_features": args.base_features if args.model_arch == "split_unet" else None,
+        "base_features": args.base_features
+        if args.model_arch in {"split_unet", "split_unet_transformer_bottleneck"}
+        else None,
         "parameters": count_parameters(model),
         "initialization": "flow-matching pretrained weights" if args.flow_checkpoint else "random supervised baseline",
         "flow_checkpoint": args.flow_checkpoint or None,

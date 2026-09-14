@@ -1,0 +1,16 @@
+Method,Fold,Held-out test subjects,Selected threshold,Validation Dice,Test Dice,Test IoU,Test Precision,Test Recall,Test Accuracy,Test windows
+Random Split U-Net,fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30",0.4,0.421,0.3881,0.2408,0.3917,0.3846,0.9471,8265
+Random Split U-Net,fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29",0.25,0.4383,0.3538,0.2149,0.2967,0.438,0.937,8518
+Random Split U-Net,fold2,"sub-3, sub-12, sub-17, sub-22, sub-27",0.25,0.4528,0.3883,0.2409,0.3933,0.3835,0.9536,6868
+Random Split U-Net,fold3,"sub-5, sub-13, sub-18, sub-23, sub-28",0.4,0.4201,0.4159,0.2625,0.3964,0.4373,0.9438,6829
+Random Split U-Net,fold4,"sub-7, sub-9, sub-14, sub-19, sub-24",0.4,0.4275,0.3949,0.246,0.4201,0.3726,0.9506,6830
+M3 Flow-initialized Split U-Net,fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30",0.5,0.4224,0.3911,0.2431,0.4081,0.3754,0.949,8265
+M3 Flow-initialized Split U-Net,fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29",0.5,0.409,0.3164,0.1879,0.2573,0.4108,0.9301,8518
+M3 Flow-initialized Split U-Net,fold2,"sub-3, sub-12, sub-17, sub-22, sub-27",0.2,0.3911,0.3487,0.2111,0.3253,0.3756,0.9462,6868
+M3 Flow-initialized Split U-Net,fold3,"sub-5, sub-13, sub-18, sub-23, sub-28",0.5,0.4268,0.4218,0.2672,0.4057,0.4392,0.9449,6829
+M3 Flow-initialized Split U-Net,fold4,"sub-7, sub-9, sub-14, sub-19, sub-24",0.45,0.4063,0.3701,0.2271,0.3972,0.3465,0.949,6830
+Attention + M3 Flow-initialized Split U-Net,fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30",0.6,0.7006,0.6477,0.4789,0.7213,0.5877,0.9721,8265
+Attention + M3 Flow-initialized Split U-Net,fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29",0.4,0.7237,0.6086,0.4374,0.5977,0.6199,0.9686,8518
+Attention + M3 Flow-initialized Split U-Net,fold2,"sub-3, sub-12, sub-17, sub-22, sub-27",0.4,0.7341,0.5787,0.4072,0.6407,0.5277,0.9705,6868
+Attention + M3 Flow-initialized Split U-Net,fold3,"sub-5, sub-13, sub-18, sub-23, sub-28",0.75,0.7101,0.6949,0.5325,0.7005,0.6895,0.9723,6829
+Attention + M3 Flow-initialized Split U-Net,fold4,"sub-7, sub-9, sub-14, sub-19, sub-24",0.55,0.6943,0.6443,0.4753,0.6383,0.6505,0.969,6830

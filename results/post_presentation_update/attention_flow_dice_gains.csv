@@ -1,0 +1,6 @@
+Fold,Held-out subjects,Attention minus Random Dice,Attention minus M3 Dice
+fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30",0.2596,0.2566
+fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29",0.2548,0.2922
+fold2,"sub-3, sub-12, sub-17, sub-22, sub-27",0.1904,0.23
+fold3,"sub-5, sub-13, sub-18, sub-23, sub-28",0.279,0.2731
+fold4,"sub-7, sub-9, sub-14, sub-19, sub-24",0.2494,0.2742

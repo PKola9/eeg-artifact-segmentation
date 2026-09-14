@@ -1,0 +1,6 @@
+Fold,Held-out subjects,Precision Random,Precision M3 Flow,Precision Attention Flow,Recall Random,Recall M3 Flow,Recall Attention Flow
+fold0,"sub-1, sub-10, sub-15, sub-20, sub-25, sub-30",0.3917,0.4081,0.7213,0.3846,0.3754,0.5877
+fold1,"sub-2, sub-11, sub-16, sub-21, sub-26, sub-29",0.2967,0.2573,0.5977,0.438,0.4108,0.6199
+fold2,"sub-3, sub-12, sub-17, sub-22, sub-27",0.3933,0.3253,0.6407,0.3835,0.3756,0.5277
+fold3,"sub-5, sub-13, sub-18, sub-23, sub-28",0.3964,0.4057,0.7005,0.4373,0.4392,0.6895
+fold4,"sub-7, sub-9, sub-14, sub-19, sub-24",0.4201,0.3972,0.6383,0.3726,0.3465,0.6505

@@ -1,0 +1,10 @@
+round,split,heldout_subjects,model,experiment,threshold,dice,iou,precision,recall,accuracy,status
+Round 1,Set A,"sub-10, sub-20, sub-30",M3 flow-initialized Split U-Net,M3_three_subject_holdout_setA_sub10_sub20_sub30,0.4,0.38786936067203515,0.24059424913214408,0.3409497778586156,0.4497632372041453,0.9440646751826631,available
+Round 1,Set B,"sub-1, sub-15, sub-25",M3 flow-initialized Split U-Net,M3_three_subject_holdout_setB_sub1_sub15_sub25,0.45,0.3919961667551545,0.24377812953600497,0.45725843719227566,0.34303627010119364,0.9490946772431328,available
+Round 1,Set C,"sub-5, sub-18, sub-27",M3 flow-initialized Split U-Net,M3_three_subject_holdout_setC_sub5_sub18_sub27,0.35,0.43224736457419444,0.2757114577943573,0.42577797223524694,0.4389163857270602,0.9496156299735836,available
+Round 2,Set A,"sub-10, sub-20, sub-30",Random Split U-Net,RANDOM_three_subject_holdout_setA_sub10_sub20_sub30,0.3,0.4400287146290194,0.28207488096447564,0.3915956285841025,0.5021332451531453,0.9496444571466441,available
+Round 2,Set B,"sub-1, sub-15, sub-25",Random Split U-Net,RANDOM_three_subject_holdout_setB_sub1_sub15_sub25,0.35,0.3945196403806026,0.24573308419302572,0.4546907641294492,0.3484127315928558,0.9488407575739114,available
+Round 2,Set C,"sub-5, sub-18, sub-27",Random Split U-Net,RANDOM_three_subject_holdout_setC_sub5_sub18_sub27,0.35,0.4636341757105698,0.30177329408183157,0.4784202119309732,0.4497346930078095,0.9545295469834446,available
+Round 2,Set A,"sub-10, sub-20, sub-30",Tuned M3 flow-initialized Split U-Net,M3_TUNED_three_subject_holdout_setA_sub10_sub20_sub30,0.3,0.3716853857680374,0.2282638640711043,0.3262368443163428,0.43184657656454517,0.9424726030120781,available
+Round 2,Set B,"sub-1, sub-15, sub-25",Tuned M3 flow-initialized Split U-Net,M3_TUNED_three_subject_holdout_setB_sub1_sub15_sub25,0.25,0.4023735583703094,0.2518570974325264,0.4398727837605974,0.3707657211549287,0.9473135905965305,available
+Round 2,Set C,"sub-5, sub-18, sub-27",Tuned M3 flow-initialized Split U-Net,M3_TUNED_three_subject_holdout_setC_sub5_sub18_sub27,0.35,0.3992019010926081,0.24937679609007485,0.3666920904563033,0.43803692914126446,0.9423852199451983,available

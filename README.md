@@ -20,7 +20,7 @@ The final pipeline has two main stages:
    - Trains a Split U-Net to predict dense artifact probability maps.
    - Evaluates overlap, probability quality, threshold behavior, artifact-label behavior, and interval start/end outputs.
 
-The repository also includes additional comparison experiments, including auxiliary dataset ablations and an attention-based EEG-Conformer-style baseline.
+The repository also includes additional comparison experiments, including auxiliary dataset ablations, an attention-based EEG-Conformer-style baseline, and a post-presentation attention-flow follow-up experiment.
 
 ## Repository structure
 
@@ -83,8 +83,29 @@ The main dataset roles are:
 | M4 | Additional flow-matching ablation with DEAP and CHB-MIT |
 | M5 | Additional flow-matching ablation with TUH |
 | M6 | Attention-based EEG-Conformer-style baseline |
+| Attention-flow follow-up | Split U-Net with a Transformer bottleneck and M3 flow-matching initialization for compatible convolutional layers |
 
 The thesis focuses mainly on the controlled Split U-Net comparison from M1 to M3. M4, M5, and M6 are included as additional experiments and future-direction evidence.
+
+## Post-presentation update
+
+After the thesis presentation, the evaluation was extended to stricter subject-level testing:
+
+- three-subject held-out test sets;
+- five-fold subject-wise cross-validation;
+- an attention-flow follow-up model combining the Split U-Net segmentation pipeline, M3 flow initialization, and a Transformer bottleneck.
+
+The main post-presentation files are:
+
+```text
+docs/post_presentation_update/post_presentation_evaluation_report.docx
+docs/post_presentation_update/attention_flow_methodology_report.docx
+results/post_presentation_update/
+models/splitunet_transformer_bottleneck_segmentation.py
+scripts/08_train_attention_flow_subjectwise_cv.slurm
+```
+
+The attention-flow model was evaluated on the same five subject-wise folds as the previous baselines. The comparison files in `results/post_presentation_update/` contain side-by-side metrics for Dice, IoU, precision, recall, accuracy, and fold-level Dice gains.
 
 ## Key result locations
 
@@ -99,6 +120,7 @@ results/interval_demo/
 results/probability_outputs/
 results/interval_matching_metrics/
 results/training_summaries/
+results/post_presentation_update/
 ```
 
 The most important result folders are:
@@ -128,6 +150,7 @@ The full training pipeline is designed for an HPC/GPU environment. The shell scr
 05_run_threshold_sweeps.sh
 06_train_deap_chbmit_ablation.sh
 07_train_tuh_ablation.sh
+08_train_attention_flow_subjectwise_cv.slurm
 train_tuh_ablation.slurm
 ```
 
